@@ -45,6 +45,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -60,6 +61,7 @@
             // 
             this.txtLogin.Location = new System.Drawing.Point(423, 64);
             this.txtLogin.Name = "txtLogin";
+            this.txtLogin.ReadOnly = true;
             this.txtLogin.Size = new System.Drawing.Size(128, 20);
             this.txtLogin.TabIndex = 20;
             // 
@@ -189,7 +191,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(257, 212);
+            this.btnNovo.Location = new System.Drawing.Point(157, 212);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(94, 30);
             this.btnNovo.TabIndex = 28;
@@ -197,11 +199,22 @@
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Visible = false;
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(257, 212);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(94, 30);
+            this.btnConsultar.TabIndex = 29;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 264);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
@@ -245,5 +258,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }

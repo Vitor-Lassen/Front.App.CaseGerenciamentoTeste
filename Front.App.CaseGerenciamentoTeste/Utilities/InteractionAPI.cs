@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
-
+using System.Windows.Forms;
 
 namespace Front.App.CaseGerenciamentoTeste.Utilities
 {
@@ -15,13 +15,36 @@ namespace Front.App.CaseGerenciamentoTeste.Utilities
     {
         HttpClient httpClient = new HttpClient();
 
-        public HttpResponseMessage Post(string route, object obj)
+        public string Post(string route, object obj)
         {
             string json = JsonConvert.SerializeObject(obj);
             StringContent content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            return httpClient.PostAsync("http://localhost:50949/" + route, content).Result;
+            HttpResponseMessage response = httpClient.PostAsync("http://localhost:50949/" + route, content).Result;
+            if (response.StatusCode == System.Net.HttpStatusCode.OK) 
+                return response.Content.ReadAsStringAsync().Result;
+            else
+            {
+               
+                throw new Exception(response.Content.ReadAsStringAsync().Result);
+            }
         }
+
+        public string Get(string route)
+        {
+            //string json = JsonConvert.SerializeObject(obj);
+            //StringContent content = new StringContent(json);
+           // content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            HttpResponseMessage response = httpClient.GetAsync("http://localhost:50949/" + route ).Result;
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                return response.Content.ReadAsStringAsync().Result;
+            else
+            {
+                MessageBox.Show(response.Content.ReadAsStringAsync().Result);
+                throw new Exception(response.Content.ReadAsStringAsync().Result);
+            }
+        }
+
     }
 }
 

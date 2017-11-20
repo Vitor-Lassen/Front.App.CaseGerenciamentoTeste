@@ -20,6 +20,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 {
     public partial class frmUser : Form
     {
+        User _user = new User();
         public frmUser()
         {
             InitializeComponent();
@@ -38,32 +39,72 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 btnSalvar.Text = "Salvar"; 
             }
         }
-
+        private void carregaCampos()
+        {
+            txtNome.Text= _user.nome_usu;
+            txtSobrenome.Text= _user.sobrenome_usu ;
+            txtEmail.Text= _user.email_usu ;
+            cboAcesso.SelectedIndex = _user.permissao_usu ;
+            txtSenha.Text=_user.senha_usu ;
+            txtCod.Text = _user.cod_usu.ToString();
+            txtLogin.Text = _user.login_usu;
+        }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            
-            user.nomeUsu = txtNome.Text;
-            user.sobrenomeUsu = txtSobrenome.Text;
-            user.email = txtEmail.Text;
-            user.permissaoUsu = cboAcesso.SelectedIndex;
-            user.senhaUsu = txtSenha.Text;
-            if (String.IsNullOrEmpty(txtCod.Text))
+            try
             {
-                string json = JsonConvert.SerializeObject(user);
-                StringContent content = new StringContent(json);
-                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                HttpClient teste = new HttpClient();
-                teste.PostAsync("http://localhost:50949/api/create/user", content);
+                _user.nome_usu = txtNome.Text;
+                _user.sobrenome_usu = txtSobrenome.Text;
+                _user.email_usu = txtEmail.Text;
+                _user.permissao_usu = cboAcesso.SelectedIndex;
+                _user.senha_usu = txtSenha.Text;
+                if (String.IsNullOrEmpty(txtCod.Text))
+                {
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/create/user", _user);
+                    _user = JsonConvert.DeserializeObject<User>(response);
+                    carregaCampos();
+                    MessageBox.Show("Salvo!");
+                }
+                else
+                {
+                    _user.cod_usu = Convert.ToInt32(txtCod.Text);
 
-            }   
-            else
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/update/user", _user);
+                    _user = JsonConvert.DeserializeObject<User>(response);
+                    carregaCampos();
+                    MessageBox.Show("Salvo!");
+                    btnNovo.Visible = true;
+                    btnSalvar.Text = "Salvar";
+                }
+            }
+            catch(Exception ex)
             {
-
-                user.cod = Convert.ToInt32(txtCod.Text);
-                btnNovo.Visible = true;
-                btnSalvar.Text = "Salvar";
+                MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            frmSelectUser selectUser = new frmSelectUser(this);
+            selectUser.ShowDialog();
+            
+        }
+        public void carregaConsulta (int codUser)
+        {
+            try { 
+            if (codUser != 0)
+            {
+                InteractionAPI api = new InteractionAPI();
+                _user = JsonConvert.DeserializeObject<User>(api.Get("api/select/user/all/" + codUser.ToString()));
+                carregaCampos();
+            }
+        }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
     }
 }

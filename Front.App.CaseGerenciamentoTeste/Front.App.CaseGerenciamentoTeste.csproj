@@ -61,6 +61,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\InteractionAPI.cs" />
+    <Compile Include="View\frmSelectUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSelectUser.Designer.cs">
+      <DependentUpon>frmSelectUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmSelectUser.resx">
+      <DependentUpon>frmSelectUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
     </EmbeddedResource>

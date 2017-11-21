@@ -26,7 +26,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             try { 
             InteractionAPI api = new InteractionAPI();
-            dgvUsers.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/select/user/forname/" + txtNome.Text));
+            dgvUsers.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/user/select/forname/" + txtNome.Text));
             }
             catch (Exception ex)
             {

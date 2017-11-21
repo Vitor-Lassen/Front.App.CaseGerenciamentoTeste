@@ -40,7 +40,7 @@ namespace Front.App.CaseGerenciamentoTeste.Utilities
                 return response.Content.ReadAsStringAsync().Result;
             else
             {
-                MessageBox.Show(response.Content.ReadAsStringAsync().Result);
+                //MessageBox.Show(response.Content.ReadAsStringAsync().Result);
                 throw new Exception(response.Content.ReadAsStringAsync().Result);
             }
         }

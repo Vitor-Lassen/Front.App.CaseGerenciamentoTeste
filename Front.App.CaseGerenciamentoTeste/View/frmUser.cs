@@ -58,10 +58,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 _user.email_usu = txtEmail.Text;
                 _user.permissao_usu = cboAcesso.SelectedIndex;
                 _user.senha_usu = txtSenha.Text;
+                _user.troca_senha = chekTrocaSenha.Checked;
                 if (String.IsNullOrEmpty(txtCod.Text))
                 {
                     InteractionAPI api = new InteractionAPI();
-                    var response = api.Post("api/create/user", _user);
+                    var response = api.Post("api/user/create", _user);
                     _user = JsonConvert.DeserializeObject<User>(response);
                     carregaCampos();
                     MessageBox.Show("Salvo!");
@@ -71,7 +72,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     _user.cod_usu = Convert.ToInt32(txtCod.Text);
 
                     InteractionAPI api = new InteractionAPI();
-                    var response = api.Post("api/update/user", _user);
+                    var response = api.Post("api/user/update", _user);
                     _user = JsonConvert.DeserializeObject<User>(response);
                     carregaCampos();
                     MessageBox.Show("Salvo!");
@@ -97,7 +98,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
             if (codUser != 0)
             {
                 InteractionAPI api = new InteractionAPI();
-                _user = JsonConvert.DeserializeObject<User>(api.Get("api/select/user/all/" + codUser.ToString()));
+                _user = JsonConvert.DeserializeObject<User>(api.Get("api/user/select/all/" + codUser.ToString()));
                 carregaCampos();
             }
         }
@@ -105,6 +106,6 @@ namespace Front.App.CaseGerenciamentoTeste.View
             {
                 MessageBox.Show(ex.Message);
             }
-}
+        }
     }
 }

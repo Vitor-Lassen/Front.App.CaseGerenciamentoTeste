@@ -46,6 +46,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.chekTrocaSenha = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label4
@@ -209,11 +210,22 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // chekTrocaSenha
+            // 
+            this.chekTrocaSenha.AutoSize = true;
+            this.chekTrocaSenha.Location = new System.Drawing.Point(457, 139);
+            this.chekTrocaSenha.Name = "chekTrocaSenha";
+            this.chekTrocaSenha.Size = new System.Drawing.Size(94, 17);
+            this.chekTrocaSenha.TabIndex = 30;
+            this.chekTrocaSenha.Text = "Troca Senha?";
+            this.chekTrocaSenha.UseVisualStyleBackColor = true;
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 264);
+            this.Controls.Add(this.chekTrocaSenha);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnCancelar);
@@ -259,5 +271,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.CheckBox chekTrocaSenha;
     }
 }

@@ -47,12 +47,14 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.chekTrocaSenha = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(381, 67);
+            this.label4.Location = new System.Drawing.Point(379, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 21;
@@ -60,7 +62,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(423, 64);
+            this.txtLogin.Location = new System.Drawing.Point(421, 54);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.ReadOnly = true;
             this.txtLogin.Size = new System.Drawing.Size(128, 20);
@@ -69,7 +71,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 175);
+            this.label5.Location = new System.Drawing.Point(19, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 19;
@@ -83,7 +85,7 @@
             "Operador",
             "Analista",
             "Coordenador"});
-            this.cboAcesso.Location = new System.Drawing.Point(126, 172);
+            this.cboAcesso.Location = new System.Drawing.Point(124, 162);
             this.cboAcesso.Name = "cboAcesso";
             this.cboAcesso.Size = new System.Drawing.Size(208, 21);
             this.cboAcesso.TabIndex = 18;
@@ -91,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 139);
+            this.label3.Location = new System.Drawing.Point(70, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 17;
@@ -100,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 103);
+            this.label2.Location = new System.Drawing.Point(44, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 16;
@@ -109,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 67);
+            this.label1.Location = new System.Drawing.Point(70, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 15;
@@ -117,21 +119,21 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(126, 136);
+            this.txtEmail.Location = new System.Drawing.Point(124, 126);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(208, 20);
             this.txtEmail.TabIndex = 14;
             // 
             // txtSobrenome
             // 
-            this.txtSobrenome.Location = new System.Drawing.Point(126, 100);
+            this.txtSobrenome.Location = new System.Drawing.Point(124, 90);
             this.txtSobrenome.Name = "txtSobrenome";
             this.txtSobrenome.Size = new System.Drawing.Size(208, 20);
             this.txtSobrenome.TabIndex = 13;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(126, 64);
+            this.txtNome.Location = new System.Drawing.Point(124, 54);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(208, 20);
             this.txtNome.TabIndex = 12;
@@ -139,7 +141,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(376, 103);
+            this.label6.Location = new System.Drawing.Point(374, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 23;
@@ -147,7 +149,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(423, 100);
+            this.txtSenha.Location = new System.Drawing.Point(421, 90);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'X';
             this.txtSenha.Size = new System.Drawing.Size(128, 20);
@@ -156,7 +158,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(67, 32);
+            this.label7.Location = new System.Drawing.Point(65, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 25;
@@ -164,7 +166,7 @@
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(126, 29);
+            this.txtCod.Location = new System.Drawing.Point(124, 19);
             this.txtCod.Name = "txtCod";
             this.txtCod.ReadOnly = true;
             this.txtCod.Size = new System.Drawing.Size(88, 20);
@@ -173,7 +175,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(457, 212);
+            this.btnSalvar.Location = new System.Drawing.Point(455, 202);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(94, 30);
             this.btnSalvar.TabIndex = 26;
@@ -183,7 +185,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(357, 212);
+            this.btnCancelar.Location = new System.Drawing.Point(355, 202);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 30);
             this.btnCancelar.TabIndex = 27;
@@ -192,7 +194,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(157, 212);
+            this.btnNovo.Location = new System.Drawing.Point(155, 202);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(94, 30);
             this.btnNovo.TabIndex = 28;
@@ -202,7 +204,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(257, 212);
+            this.btnConsultar.Location = new System.Drawing.Point(255, 202);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(94, 30);
             this.btnConsultar.TabIndex = 29;
@@ -213,41 +215,54 @@
             // chekTrocaSenha
             // 
             this.chekTrocaSenha.AutoSize = true;
-            this.chekTrocaSenha.Location = new System.Drawing.Point(457, 139);
+            this.chekTrocaSenha.Location = new System.Drawing.Point(455, 129);
             this.chekTrocaSenha.Name = "chekTrocaSenha";
             this.chekTrocaSenha.Size = new System.Drawing.Size(94, 17);
             this.chekTrocaSenha.TabIndex = 30;
             this.chekTrocaSenha.Text = "Troca Senha?";
             this.chekTrocaSenha.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.chekTrocaSenha);
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.btnConsultar);
+            this.groupBox1.Controls.Add(this.txtSobrenome);
+            this.groupBox1.Controls.Add(this.btnNovo);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnSalvar);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtCod);
+            this.groupBox1.Controls.Add(this.cboAcesso);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtSenha);
+            this.groupBox1.Controls.Add(this.txtLogin);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(578, 240);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Usuário";
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 264);
-            this.Controls.Add(this.chekTrocaSenha);
-            this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtCod);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cboAcesso);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtSobrenome);
-            this.Controls.Add(this.txtNome);
+            this.ClientSize = new System.Drawing.Size(609, 271);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frmUser";
             this.Text = "Usuário";
+            this.Load += new System.EventHandler(this.frmUser_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -272,5 +287,6 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.CheckBox chekTrocaSenha;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

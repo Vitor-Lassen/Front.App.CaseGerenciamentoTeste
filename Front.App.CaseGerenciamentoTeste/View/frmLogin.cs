@@ -38,7 +38,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     }
                     else
                     {
-                        frmUser userfrm = new frmUser();
+                        var userfrm = new frmProjeto();
                         userfrm.Show();
                         this.Close();
                     }

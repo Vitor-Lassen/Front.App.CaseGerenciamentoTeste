@@ -48,6 +48,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
             txtSenha.Text=_user.senha_usu ;
             txtCod.Text = _user.cod_usu.ToString();
             txtLogin.Text = _user.login_usu;
+            chekTrocaSenha.Checked = _user.troca_senha;
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -106,6 +107,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void frmUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

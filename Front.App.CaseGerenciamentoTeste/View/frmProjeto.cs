@@ -1,4 +1,5 @@
-﻿using Front.App.CaseGerenciamentoTeste.Utilities;
+﻿using Back.DB.CaseGerenciamentoTeste.Models;
+using Front.App.CaseGerenciamentoTeste.Utilities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -40,5 +41,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         }
 
+        private void btnAddSistema_Click(object sender, EventArgs e)
+        {
+           var response = api.Get("api/sistema/select/all/" + cboAddSistema.SelectedValue);
+           Sistema sistema = JsonConvert.DeserializeObject<Sistema>(response);
+            dgvSistemas.Rows.Add(sistema.cod_sis, sistema.nome_sis, sistema.sigla_sis);
+        }
     }
 }

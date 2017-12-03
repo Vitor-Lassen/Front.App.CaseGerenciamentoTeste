@@ -29,20 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddSistema = new System.Windows.Forms.Button();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboAddSistema = new System.Windows.Forms.ComboBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSistemas = new System.Windows.Forms.DataGridView();
             this.txtObjetivoProj = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeProj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.cboAddSistema = new System.Windows.Forms.ComboBox();
-            this.cboStatus = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnAddSistema = new System.Windows.Forms.Button();
+            this.CodSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNomeSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSiglaSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistemas)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +73,78 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Projeto";
             // 
+            // btnAddSistema
+            // 
+            this.btnAddSistema.Location = new System.Drawing.Point(642, 88);
+            this.btnAddSistema.Name = "btnAddSistema";
+            this.btnAddSistema.Size = new System.Drawing.Size(25, 25);
+            this.btnAddSistema.TabIndex = 37;
+            this.btnAddSistema.Text = "+";
+            this.btnAddSistema.UseVisualStyleBackColor = true;
+            this.btnAddSistema.Click += new System.EventHandler(this.btnAddSistema_Click);
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(415, 40);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(195, 21);
+            this.cboStatus.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(369, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Status:";
+            // 
+            // cboAddSistema
+            // 
+            this.cboAddSistema.FormattingEnabled = true;
+            this.cboAddSistema.Location = new System.Drawing.Point(472, 91);
+            this.cboAddSistema.Name = "cboAddSistema";
+            this.cboAddSistema.Size = new System.Drawing.Size(158, 21);
+            this.cboAddSistema.TabIndex = 34;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(373, 252);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(94, 30);
+            this.btnConsultar.TabIndex = 33;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Location = new System.Drawing.Point(273, 252);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(94, 30);
+            this.btnNovo.TabIndex = 32;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Visible = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(473, 252);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 30);
+            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.Text = "Cancelar ";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(573, 252);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(94, 30);
+            this.btnSalvar.TabIndex = 30;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -87,6 +162,10 @@
             this.dgvSistemas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSistemas.BackgroundColor = System.Drawing.Color.White;
             this.dgvSistemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSistemas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodSis,
+            this.txtNomeSis,
+            this.txtSiglaSis});
             this.dgvSistemas.Location = new System.Drawing.Point(373, 135);
             this.dgvSistemas.Name = "dgvSistemas";
             this.dgvSistemas.ReadOnly = true;
@@ -129,76 +208,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
-            // btnConsultar
+            // CodSis
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(373, 252);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(94, 30);
-            this.btnConsultar.TabIndex = 33;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.CodSis.HeaderText = "Código";
+            this.CodSis.Name = "CodSis";
+            this.CodSis.ReadOnly = true;
+            this.CodSis.Visible = false;
             // 
-            // btnNovo
+            // txtNomeSis
             // 
-            this.btnNovo.Location = new System.Drawing.Point(273, 252);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(94, 30);
-            this.btnNovo.TabIndex = 32;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Visible = false;
+            this.txtNomeSis.HeaderText = "Sistema";
+            this.txtNomeSis.Name = "txtNomeSis";
+            this.txtNomeSis.ReadOnly = true;
             // 
-            // btnCancelar
+            // txtSiglaSis
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(473, 252);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 30);
-            this.btnCancelar.TabIndex = 31;
-            this.btnCancelar.Text = "Cancelar ";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(573, 252);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(94, 30);
-            this.btnSalvar.TabIndex = 30;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // cboAddSistema
-            // 
-            this.cboAddSistema.FormattingEnabled = true;
-            this.cboAddSistema.Location = new System.Drawing.Point(472, 91);
-            this.cboAddSistema.Name = "cboAddSistema";
-            this.cboAddSistema.Size = new System.Drawing.Size(158, 21);
-            this.cboAddSistema.TabIndex = 34;
-            // 
-            // cboStatus
-            // 
-            this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(415, 40);
-            this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(195, 21);
-            this.cboStatus.TabIndex = 36;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(369, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Status:";
-            // 
-            // btnAddSistema
-            // 
-            this.btnAddSistema.Location = new System.Drawing.Point(642, 88);
-            this.btnAddSistema.Name = "btnAddSistema";
-            this.btnAddSistema.Size = new System.Drawing.Size(25, 25);
-            this.btnAddSistema.TabIndex = 37;
-            this.btnAddSistema.Text = "+";
-            this.btnAddSistema.UseVisualStyleBackColor = true;
+            this.txtSiglaSis.HeaderText = "Sigla";
+            this.txtSiglaSis.Name = "txtSiglaSis";
+            this.txtSiglaSis.ReadOnly = true;
             // 
             // frmProjeto
             // 
@@ -233,5 +260,8 @@
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboAddSistema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodSis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtNomeSis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtSiglaSis;
     }
 }

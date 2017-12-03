@@ -53,7 +53,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(139, 71);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = 'X';
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(166, 20);
             this.txtSenha.TabIndex = 8;
             // 
@@ -86,7 +86,7 @@
             // 
             this.txtNovaSenha.Location = new System.Drawing.Point(139, 105);
             this.txtNovaSenha.Name = "txtNovaSenha";
-            this.txtNovaSenha.PasswordChar = 'X';
+            this.txtNovaSenha.PasswordChar = '*';
             this.txtNovaSenha.Size = new System.Drawing.Size(166, 20);
             this.txtNovaSenha.TabIndex = 11;
             // 
@@ -103,7 +103,7 @@
             // 
             this.txtConfiNovaSenha.Location = new System.Drawing.Point(139, 139);
             this.txtConfiNovaSenha.Name = "txtConfiNovaSenha";
-            this.txtConfiNovaSenha.PasswordChar = 'X';
+            this.txtConfiNovaSenha.PasswordChar = '*';
             this.txtConfiNovaSenha.Size = new System.Drawing.Size(166, 20);
             this.txtConfiNovaSenha.TabIndex = 13;
             // 
@@ -120,6 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(339, 230);
             this.Controls.Add(this.txtConfiNovaSenha);
             this.Controls.Add(this.label4);
@@ -132,6 +133,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmTrocarSenha";
             this.Text = "frmTrocarSenha";
+            this.Load += new System.EventHandler(this.frmTrocarSenha_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

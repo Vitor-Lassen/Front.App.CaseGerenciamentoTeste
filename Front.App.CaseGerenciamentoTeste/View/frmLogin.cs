@@ -25,20 +25,22 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             try
             {
+                //essa fita é prara jogar a txtbox pro parametro da API
                 _auth.user = txtLogin.Text;
                 _auth.password = txtSenha.Text;
                 InteractionAPI api = new InteractionAPI();
-               _auth =JsonConvert.DeserializeObject<Auth> (api.Post("api/auth", _auth));
+                _auth =JsonConvert.DeserializeObject<Auth> (api.Post("api/auth", _auth));
                 if ((bool)_auth.auth)
                 {
                     if ((bool)_auth.trocasenha)
                     {
                         frmTrocarSenha trocaSenhafrm = new frmTrocarSenha(_auth);
+                        txtSenha.Text = "";
                         trocaSenhafrm.ShowDialog();
                     }
                     else
                     {
-                        var userfrm = new frmProjeto();
+                        var userfrm = new frmUser();
                         userfrm.Show();
                         this.Close();
                     }
@@ -53,6 +55,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 MessageBox.Show(ex.Message);
                
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

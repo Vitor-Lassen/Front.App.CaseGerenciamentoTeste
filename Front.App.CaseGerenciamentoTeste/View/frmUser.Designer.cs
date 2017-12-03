@@ -137,6 +137,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(208, 20);
             this.txtNome.TabIndex = 12;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // label6
             // 
@@ -151,7 +152,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(421, 90);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = 'X';
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(128, 20);
             this.txtSenha.TabIndex = 22;
             // 
@@ -255,6 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(609, 271);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUser";

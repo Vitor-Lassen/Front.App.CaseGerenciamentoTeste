@@ -71,7 +71,6 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 else
                 {
                     _user.cod_usu = Convert.ToInt32(txtCod.Text);
-
                     InteractionAPI api = new InteractionAPI();
                     var response = api.Post("api/user/update", _user);
                     _user = JsonConvert.DeserializeObject<User>(response);
@@ -110,6 +109,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
         }
 
         private void frmUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -42,5 +42,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
             }
 
         }
+
+        private void frmTrocarSenha_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

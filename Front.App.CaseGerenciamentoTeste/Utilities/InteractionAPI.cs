@@ -20,7 +20,7 @@ namespace Front.App.CaseGerenciamentoTeste.Utilities
             string json = JsonConvert.SerializeObject(obj);
             StringContent content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            HttpResponseMessage response = httpClient.PostAsync("http://localhost:50949/" + route, content).Result;
+            HttpResponseMessage response = httpClient.PostAsync("http://25.16.151.120:8081/" + route, content).Result;
             if (response.StatusCode == System.Net.HttpStatusCode.OK) 
                 return response.Content.ReadAsStringAsync().Result;
             else
@@ -35,7 +35,7 @@ namespace Front.App.CaseGerenciamentoTeste.Utilities
             //string json = JsonConvert.SerializeObject(obj);
             //StringContent content = new StringContent(json);
            // content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            HttpResponseMessage response = httpClient.GetAsync("http://localhost:50949/" + route ).Result;
+            HttpResponseMessage response = httpClient.GetAsync("http://25.16.151.120:8081/" + route ).Result;
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 return response.Content.ReadAsStringAsync().Result;
             else

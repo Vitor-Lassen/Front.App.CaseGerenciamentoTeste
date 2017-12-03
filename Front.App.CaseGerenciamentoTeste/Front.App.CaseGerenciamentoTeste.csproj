@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Model\Auth.cs" />
     <Compile Include="Model\AuthTrocaSenha.cs" />
+    <Compile Include="Model\Sistema.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

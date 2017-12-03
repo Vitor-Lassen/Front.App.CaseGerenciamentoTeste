@@ -43,6 +43,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeProj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CodSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNomeSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSiglaSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistemas)).BeginInit();
             this.SuspendLayout();
@@ -78,13 +81,14 @@
             this.btnAddSistema.TabIndex = 37;
             this.btnAddSistema.Text = "+";
             this.btnAddSistema.UseVisualStyleBackColor = true;
+            this.btnAddSistema.Click += new System.EventHandler(this.btnAddSistema_Click);
             // 
             // cboStatus
             // 
             this.cboStatus.FormattingEnabled = true;
             this.cboStatus.Location = new System.Drawing.Point(415, 40);
             this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(215, 21);
+            this.cboStatus.Size = new System.Drawing.Size(195, 21);
             this.cboStatus.TabIndex = 36;
             // 
             // label2
@@ -158,6 +162,10 @@
             this.dgvSistemas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSistemas.BackgroundColor = System.Drawing.Color.White;
             this.dgvSistemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSistemas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodSis,
+            this.txtNomeSis,
+            this.txtSiglaSis});
             this.dgvSistemas.Location = new System.Drawing.Point(373, 135);
             this.dgvSistemas.Name = "dgvSistemas";
             this.dgvSistemas.ReadOnly = true;
@@ -200,6 +208,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
+            // CodSis
+            // 
+            this.CodSis.HeaderText = "Código";
+            this.CodSis.Name = "CodSis";
+            this.CodSis.ReadOnly = true;
+            this.CodSis.Visible = false;
+            // 
+            // txtNomeSis
+            // 
+            this.txtNomeSis.HeaderText = "Sistema";
+            this.txtNomeSis.Name = "txtNomeSis";
+            this.txtNomeSis.ReadOnly = true;
+            // 
+            // txtSiglaSis
+            // 
+            this.txtSiglaSis.HeaderText = "Sigla";
+            this.txtSiglaSis.Name = "txtSiglaSis";
+            this.txtSiglaSis.ReadOnly = true;
+            // 
             // frmProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,5 +261,8 @@
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboAddSistema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodSis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtNomeSis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtSiglaSis;
     }
 }

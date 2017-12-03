@@ -40,8 +40,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     }
                     else
                     {
-                        var userfrm = new frmUser();
-                        userfrm.Show();
+                        var frmmainmenu = new frmMenuPrincipal();
+                        frmmainmenu.Show();
                         this.Close();
                     }
                 }

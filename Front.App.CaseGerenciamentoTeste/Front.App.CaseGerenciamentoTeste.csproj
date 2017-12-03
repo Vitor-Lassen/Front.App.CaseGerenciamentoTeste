@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\frmSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSistema.Designer.cs">
+      <DependentUpon>frmSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Auth.cs" />
     <Compile Include="Model\AuthTrocaSenha.cs" />
     <Compile Include="Model\User.cs" />
@@ -99,6 +105,9 @@
     <Compile Include="View\frmUser.Designer.cs">
       <DependentUpon>frmUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmSistema.resx">
+      <DependentUpon>frmSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

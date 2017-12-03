@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddSistema = new System.Windows.Forms.Button();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboAddSistema = new System.Windows.Forms.ComboBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSistemas = new System.Windows.Forms.DataGridView();
             this.txtObjetivoProj = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeProj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.cboAddSistema = new System.Windows.Forms.ComboBox();
-            this.cboStatus = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnAddSistema = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistemas)).BeginInit();
             this.SuspendLayout();
@@ -63,12 +63,83 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNomeProj);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(26, 22);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(690, 301);
+            this.groupBox1.Size = new System.Drawing.Size(716, 311);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Projeto";
+            // 
+            // btnAddSistema
+            // 
+            this.btnAddSistema.Location = new System.Drawing.Point(642, 88);
+            this.btnAddSistema.Name = "btnAddSistema";
+            this.btnAddSistema.Size = new System.Drawing.Size(25, 25);
+            this.btnAddSistema.TabIndex = 37;
+            this.btnAddSistema.Text = "+";
+            this.btnAddSistema.UseVisualStyleBackColor = true;
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(415, 40);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(215, 21);
+            this.cboStatus.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(369, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Status:";
+            // 
+            // cboAddSistema
+            // 
+            this.cboAddSistema.FormattingEnabled = true;
+            this.cboAddSistema.Location = new System.Drawing.Point(472, 91);
+            this.cboAddSistema.Name = "cboAddSistema";
+            this.cboAddSistema.Size = new System.Drawing.Size(158, 21);
+            this.cboAddSistema.TabIndex = 34;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(373, 252);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(94, 30);
+            this.btnConsultar.TabIndex = 33;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Location = new System.Drawing.Point(273, 252);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(94, 30);
+            this.btnNovo.TabIndex = 32;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Visible = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(473, 252);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 30);
+            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.Text = "Cancelar ";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(573, 252);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(94, 30);
+            this.btnSalvar.TabIndex = 30;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -129,81 +200,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(373, 252);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(94, 30);
-            this.btnConsultar.TabIndex = 33;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(273, 252);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(94, 30);
-            this.btnNovo.TabIndex = 32;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Visible = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(473, 252);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 30);
-            this.btnCancelar.TabIndex = 31;
-            this.btnCancelar.Text = "Cancelar ";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(573, 252);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(94, 30);
-            this.btnSalvar.TabIndex = 30;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // cboAddSistema
-            // 
-            this.cboAddSistema.FormattingEnabled = true;
-            this.cboAddSistema.Location = new System.Drawing.Point(472, 91);
-            this.cboAddSistema.Name = "cboAddSistema";
-            this.cboAddSistema.Size = new System.Drawing.Size(158, 21);
-            this.cboAddSistema.TabIndex = 34;
-            // 
-            // cboStatus
-            // 
-            this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(415, 40);
-            this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(195, 21);
-            this.cboStatus.TabIndex = 36;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(369, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Status:";
-            // 
-            // btnAddSistema
-            // 
-            this.btnAddSistema.Location = new System.Drawing.Point(642, 88);
-            this.btnAddSistema.Name = "btnAddSistema";
-            this.btnAddSistema.Size = new System.Drawing.Size(25, 25);
-            this.btnAddSistema.TabIndex = 37;
-            this.btnAddSistema.Text = "+";
-            this.btnAddSistema.UseVisualStyleBackColor = true;
-            // 
             // frmProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(740, 340);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmProjeto";

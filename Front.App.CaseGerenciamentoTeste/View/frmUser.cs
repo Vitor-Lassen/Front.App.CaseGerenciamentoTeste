@@ -44,7 +44,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
             txtNome.Text= _user.nome_usu;
             txtSobrenome.Text= _user.sobrenome_usu ;
             txtEmail.Text= _user.email_usu ;
-            cboAcesso.SelectedIndex     = _user.permissao_usu ;
+            cboAcesso.SelectedIndex = _user.permissao_usu ;
             txtSenha.Text=_user.senha_usu ;
             txtCod.Text = _user.cod_usu.ToString();
             txtLogin.Text = _user.login_usu;
@@ -60,6 +60,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 _user.permissao_usu = cboAcesso.SelectedIndex;
                 _user.senha_usu = txtSenha.Text;
                 _user.troca_senha = chekTrocaSenha.Checked;
+                //se for nulo, cria
                 if (String.IsNullOrEmpty(txtCod.Text))
                 {
                     InteractionAPI api = new InteractionAPI();
@@ -68,6 +69,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     carregaCampos();
                     MessageBox.Show("Salvo!");
                 }
+                //se nao for nulo, altera
                 else
                 {
                     _user.cod_usu = Convert.ToInt32(txtCod.Text);

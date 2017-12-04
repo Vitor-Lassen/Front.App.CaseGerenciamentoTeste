@@ -60,9 +60,10 @@ namespace Front.App.CaseGerenciamentoTeste
 
         private void carregaCampos()
         {
+            txtCodSis.Text = _sis.cod_sis.ToString();
             txtNome.Text = _sis.nome_sis;
             txtSigla.Text = _sis.sigla_sis;
-            cboStatus.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/statustypeforcod/" + _sis.cod_status_sis));
+            cboStatus.SelectedItem = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/statustypeforcod/" + _sis.cod_status_sis));
         }
         private void loadComboBox()
         {
@@ -79,6 +80,36 @@ namespace Front.App.CaseGerenciamentoTeste
 
         private void btnCadastroSis_Click(object sender, EventArgs e)
         {
-        }
+            try
+            {
+                _sis.nome_sis = txtNome.Text;
+                _sis.sigla_sis = txtSigla.Text;
+                _sis.cod_status_sis = Convert.ToInt32(cboStatus.SelectedValue);
+                //se for nulo, cria
+                if (String.IsNullOrEmpty(txtCodSis.Text))
+                {
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/sistema/create", _sis);
+                    _sis = JsonConvert.DeserializeObject<Sistema>(response);
+                    carregaCampos();
+                    MessageBox.Show("Salvo!");
+                }
+                //se nao for nulo, altera
+                else
+                {
+                    _sis.cod_sis = Convert.ToInt32(txtCodSis.Text);
+                    //_sis.cod_status_sis = Convert.ToInt32(cboStatus.SelectedValue);
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/sistema/update", _sis);
+                    _sis = JsonConvert.DeserializeObject<Sistema>(response);
+                    carregaCampos();
+                    MessageBox.Show("Salvo!");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
     }
 }

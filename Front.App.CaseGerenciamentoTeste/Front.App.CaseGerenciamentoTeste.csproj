@@ -54,6 +54,25 @@
     <Compile Include="Model\Projeto.cs" />
     <Compile Include="Model\SistemasxProjetos.cs" />
     <Compile Include="Model\StatusType.cs" />
+    <Compile Include="Model\Cenario.cs" />
+    <Compile Include="View\frmModelagemCenario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmModelagemCenario.Designer.cs">
+      <DependentUpon>frmModelagemCenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmModelagemCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmModelagemCaso.Designer.cs">
+      <DependentUpon>frmModelagemCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmSelectCenario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSelectCenario.Designer.cs">
+      <DependentUpon>frmSelectCenario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmSelectProj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +140,15 @@
     <Compile Include="View\frmUser.Designer.cs">
       <DependentUpon>frmUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmModelagemCenario.resx">
+      <DependentUpon>frmModelagemCenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmModelagemCaso.resx">
+      <DependentUpon>frmModelagemCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSelectCenario.resx">
+      <DependentUpon>frmSelectCenario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmSelectProj.resx">
       <DependentUpon>frmSelectProj.cs</DependentUpon>
     </EmbeddedResource>

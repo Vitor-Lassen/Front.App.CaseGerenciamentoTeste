@@ -39,5 +39,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
             userfrm.carregaConsulta(Convert.ToInt32(dgvUsers.CurrentRow.Cells[0].Value));
             Close();
         }
+
+        private void frmSelectUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

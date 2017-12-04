@@ -59,6 +59,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             frmsis.carregaConsulta(Convert.ToInt32(dgvSistemas.CurrentRow.Cells[0].Value));
             Close();
+            
         }
     }
 }

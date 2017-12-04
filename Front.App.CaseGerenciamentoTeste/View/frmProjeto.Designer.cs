@@ -46,12 +46,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeProj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodProj = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistemas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCodProj);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnAddSistema);
             this.groupBox1.Controls.Add(this.cboStatus);
             this.groupBox1.Controls.Add(this.label2);
@@ -146,6 +150,7 @@
             this.btnSalvar.TabIndex = 30;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label5
             // 
@@ -196,17 +201,17 @@
             // 
             // txtObjetivoProj
             // 
-            this.txtObjetivoProj.Location = new System.Drawing.Point(68, 91);
+            this.txtObjetivoProj.Location = new System.Drawing.Point(68, 135);
             this.txtObjetivoProj.MaxLength = 255;
             this.txtObjetivoProj.Multiline = true;
             this.txtObjetivoProj.Name = "txtObjetivoProj";
-            this.txtObjetivoProj.Size = new System.Drawing.Size(265, 145);
+            this.txtObjetivoProj.Size = new System.Drawing.Size(265, 101);
             this.txtObjetivoProj.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 94);
+            this.label3.Location = new System.Drawing.Point(12, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 4;
@@ -214,7 +219,7 @@
             // 
             // txtNomeProj
             // 
-            this.txtNomeProj.Location = new System.Drawing.Point(68, 45);
+            this.txtNomeProj.Location = new System.Drawing.Point(68, 91);
             this.txtNomeProj.MaxLength = 20;
             this.txtNomeProj.Name = "txtNomeProj";
             this.txtNomeProj.Size = new System.Drawing.Size(265, 20);
@@ -223,11 +228,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 48);
+            this.label1.Location = new System.Drawing.Point(12, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Código:";
+            // 
+            // txtCodProj
+            // 
+            this.txtCodProj.Enabled = false;
+            this.txtCodProj.Location = new System.Drawing.Point(68, 40);
+            this.txtCodProj.Name = "txtCodProj";
+            this.txtCodProj.Size = new System.Drawing.Size(265, 20);
+            this.txtCodProj.TabIndex = 39;
             // 
             // frmProjeto
             // 
@@ -266,5 +288,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CodSis;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtNomeSis;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtSiglaSis;
+        private System.Windows.Forms.TextBox txtCodProj;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -32,6 +32,8 @@
             this.toolfrmUser = new System.Windows.Forms.ToolStripLabel();
             this.toolfrmProjeto = new System.Windows.Forms.ToolStripLabel();
             this.toolfrmSistema = new System.Windows.Forms.ToolStripLabel();
+            this.toolfrmModelagem = new System.Windows.Forms.ToolStripLabel();
+            this.toolFechar = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolfrmUser,
             this.toolfrmProjeto,
-            this.toolfrmSistema});
+            this.toolfrmSistema,
+            this.toolfrmModelagem,
+            this.toolFechar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(756, 25);
@@ -68,6 +72,21 @@
             this.toolfrmSistema.Text = "Sistema";
             this.toolfrmSistema.Click += new System.EventHandler(this.toolfrmSistema_Click);
             // 
+            // toolfrmModelagem
+            // 
+            this.toolfrmModelagem.Name = "toolfrmModelagem";
+            this.toolfrmModelagem.Size = new System.Drawing.Size(71, 22);
+            this.toolfrmModelagem.Text = "Modelagem";
+            this.toolfrmModelagem.Click += new System.EventHandler(this.toolfrmModelagem_Click);
+            // 
+            // toolFechar
+            // 
+            this.toolFechar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolFechar.Name = "toolFechar";
+            this.toolFechar.Size = new System.Drawing.Size(50, 22);
+            this.toolFechar.Text = "Encerrar";
+            this.toolFechar.Click += new System.EventHandler(this.toolFechar_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,8 +94,11 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(756, 352);
             this.Controls.Add(this.toolStrip1);
+            this.IsMdiContainer = true;
             this.Name = "frmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenuPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -90,5 +112,7 @@
         private System.Windows.Forms.ToolStripLabel toolfrmUser;
         private System.Windows.Forms.ToolStripLabel toolfrmProjeto;
         private System.Windows.Forms.ToolStripLabel toolfrmSistema;
+        private System.Windows.Forms.ToolStripLabel toolfrmModelagem;
+        private System.Windows.Forms.ToolStripLabel toolFechar;
     }
 }

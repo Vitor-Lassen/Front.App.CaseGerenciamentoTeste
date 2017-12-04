@@ -39,5 +39,16 @@ namespace Front.App.CaseGerenciamentoTeste.View
             var frmsis = new frmSistema();
             frmsis.Show();
         }
+
+        private void toolfrmModelagem_Click(object sender, EventArgs e)
+        {
+            var frmmod = new frmModelagemCenario();
+            frmmod.Show();
+        }
+
+        private void toolFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -39,12 +39,14 @@
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnConsultaSis = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCodSis = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(95, 32);
+            this.txtNome.Location = new System.Drawing.Point(95, 86);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(279, 20);
             this.txtNome.TabIndex = 0;
@@ -52,7 +54,7 @@
             // 
             // txtSigla
             // 
-            this.txtSigla.Location = new System.Drawing.Point(95, 88);
+            this.txtSigla.Location = new System.Drawing.Point(95, 142);
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(279, 20);
             this.txtSigla.TabIndex = 1;
@@ -60,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 39);
+            this.label1.Location = new System.Drawing.Point(51, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 3;
@@ -70,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 91);
+            this.label2.Location = new System.Drawing.Point(56, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 4;
@@ -106,6 +108,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtCodSis);
             this.groupBox1.Controls.Add(this.cboStatus);
             this.groupBox1.Controls.Add(this.btnConsultaSis);
             this.groupBox1.Controls.Add(this.txtNome);
@@ -126,7 +130,7 @@
             // cboStatus
             // 
             this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(95, 143);
+            this.cboStatus.Location = new System.Drawing.Point(95, 197);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(279, 21);
             this.cboStatus.TabIndex = 10;
@@ -144,11 +148,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 146);
+            this.label3.Location = new System.Drawing.Point(43, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Status:";
+            // 
+            // txtCodSis
+            // 
+            this.txtCodSis.Enabled = false;
+            this.txtCodSis.Location = new System.Drawing.Point(95, 39);
+            this.txtCodSis.Name = "txtCodSis";
+            this.txtCodSis.Size = new System.Drawing.Size(279, 20);
+            this.txtCodSis.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Código:";
             // 
             // frmSistema
             // 
@@ -179,5 +200,7 @@
         private System.Windows.Forms.Button btnConsultaSis;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCodSis;
     }
 }

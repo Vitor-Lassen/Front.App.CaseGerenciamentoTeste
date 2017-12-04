@@ -17,7 +17,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
     public partial class frmProjeto : Form
     {
         Projeto _proj = new Projeto();
-        StatusType _status = new StatusType();  
+        StatusType _status = new StatusType();
+        SistemasxProjetos _sxp = new SistemasxProjetos();
         InteractionAPI api = new InteractionAPI();
         public frmProjeto()
         {
@@ -89,6 +90,53 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _proj.nome_proj = txtNomeProj.Text;
+                _proj.objetivo_proj = txtObjetivoProj.Text;
+                _proj.cod_status_proj = Convert.ToInt32(cboStatus.ValueMember);
+                //se for nulo, cria
+                if (String.IsNullOrEmpty(txtCodProj.Text))
+                {
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/projeto/create", _proj);
+                    _proj = JsonConvert.DeserializeObject<Projeto>(response);
+                    carregaCampos();
+                    MessageBox.Show("Salvo!");
+                }
+                //se nao for nulo, altera
+                else
+                {
+                    _proj.cod_proj = Convert.ToInt32(txtCodProj.Text);
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/projeto/update", _proj);
+                    _proj = JsonConvert.DeserializeObject<Projeto>(response);
+                    carregaCampos();
+                    MessageBox.Show("Salvo!");
+                }
+                salvaSistemasXProjeto();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void salvaSistemasXProjeto()
+        {
+            int i;
+            for (i=0;i<=dgvSistemas.RowCount;i++)
+            {
+                _sxp.cod_proj_projxsis = Convert.ToInt32(txtCodProj.Text);
+                _sxp.cod_proj_projxsis = Convert.ToInt32(dgvSistemas.Rows[i].Cells[0].Value);
+                InteractionAPI api = new InteractionAPI();
+                var response = api.Post("api/projetoxsistema/create", _sxp);
+                _sxp = JsonConvert.DeserializeObject<SistemasxProjetos>(response);
+            }
         }
     }
 }

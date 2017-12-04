@@ -12,22 +12,21 @@ using System.Windows.Forms;
 
 namespace Front.App.CaseGerenciamentoTeste.View
 {
-    public partial class frmSelectUser : Form
+    public partial class frmSelectProj : Form
     {
-        frmUser userfrm = new frmUser();
-        public frmSelectUser(frmUser userfrm)
+        frmProjeto frmproj = new frmProjeto();
+        public frmSelectProj()
         {
-            this.userfrm = userfrm;
             InitializeComponent();
-           
         }
-
-        private void btnConsultar_Click(object sender, EventArgs e)
+   
+        private void btnConsultaProj_Click(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
                 InteractionAPI api = new InteractionAPI();
-                dgvUsers.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/user/select/forname/" + txtNome.Text));
-                }
+                dgvProjetos.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/projeto/select/forname/" + txtNome.Text));
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -36,7 +35,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void btnDetalhes_Click(object sender, EventArgs e)
         {
-            userfrm.carregaConsulta(Convert.ToInt32(dgvUsers.CurrentRow.Cells[0].Value));
+            frmproj.carregaConsulta(Convert.ToInt32(dgvProjetos.CurrentRow.Cells[0].Value));
             Close();
         }
     }

@@ -39,13 +39,13 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSistemas = new System.Windows.Forms.DataGridView();
+            this.CodSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNomeSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSiglaSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObjetivoProj = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeProj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.CodSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNomeSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSiglaSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistemas)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +88,7 @@
             this.cboStatus.FormattingEnabled = true;
             this.cboStatus.Location = new System.Drawing.Point(415, 40);
             this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(195, 21);
+            this.cboStatus.Size = new System.Drawing.Size(252, 21);
             this.cboStatus.TabIndex = 36;
             // 
             // label2
@@ -116,6 +116,7 @@
             this.btnConsultar.TabIndex = 33;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnNovo
             // 
@@ -173,6 +174,25 @@
             this.dgvSistemas.Size = new System.Drawing.Size(295, 101);
             this.dgvSistemas.TabIndex = 10;
             // 
+            // CodSis
+            // 
+            this.CodSis.HeaderText = "Código";
+            this.CodSis.Name = "CodSis";
+            this.CodSis.ReadOnly = true;
+            this.CodSis.Visible = false;
+            // 
+            // txtNomeSis
+            // 
+            this.txtNomeSis.HeaderText = "Sistema";
+            this.txtNomeSis.Name = "txtNomeSis";
+            this.txtNomeSis.ReadOnly = true;
+            // 
+            // txtSiglaSis
+            // 
+            this.txtSiglaSis.HeaderText = "Sigla";
+            this.txtSiglaSis.Name = "txtSiglaSis";
+            this.txtSiglaSis.ReadOnly = true;
+            // 
             // txtObjetivoProj
             // 
             this.txtObjetivoProj.Location = new System.Drawing.Point(68, 91);
@@ -207,25 +227,6 @@
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
-            // 
-            // CodSis
-            // 
-            this.CodSis.HeaderText = "Código";
-            this.CodSis.Name = "CodSis";
-            this.CodSis.ReadOnly = true;
-            this.CodSis.Visible = false;
-            // 
-            // txtNomeSis
-            // 
-            this.txtNomeSis.HeaderText = "Sistema";
-            this.txtNomeSis.Name = "txtNomeSis";
-            this.txtNomeSis.ReadOnly = true;
-            // 
-            // txtSiglaSis
-            // 
-            this.txtSiglaSis.HeaderText = "Sigla";
-            this.txtSiglaSis.Name = "txtSiglaSis";
-            this.txtSiglaSis.ReadOnly = true;
             // 
             // frmProjeto
             // 

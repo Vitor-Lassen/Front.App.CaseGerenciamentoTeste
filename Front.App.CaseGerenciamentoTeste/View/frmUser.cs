@@ -44,7 +44,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
             txtNome.Text= _user.nome_usu;
             txtSobrenome.Text= _user.sobrenome_usu ;
             txtEmail.Text= _user.email_usu ;
-            cboAcesso.SelectedIndex = _user.permissao_usu ;
+            cboAcesso.SelectedIndex     = _user.permissao_usu ;
             txtSenha.Text=_user.senha_usu ;
             txtCod.Text = _user.cod_usu.ToString();
             txtLogin.Text = _user.login_usu;

@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Projeto.cs" />
+    <Compile Include="Model\SistemasxProjetos.cs" />
+    <Compile Include="Model\StatusType.cs" />
+    <Compile Include="View\frmSelectProj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSelectProj.Designer.cs">
+      <DependentUpon>frmSelectProj.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmSistema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +115,9 @@
     <Compile Include="View\frmUser.Designer.cs">
       <DependentUpon>frmUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmSelectProj.resx">
+      <DependentUpon>frmSelectProj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmSistema.resx">
       <DependentUpon>frmSistema.cs</DependentUpon>
     </EmbeddedResource>

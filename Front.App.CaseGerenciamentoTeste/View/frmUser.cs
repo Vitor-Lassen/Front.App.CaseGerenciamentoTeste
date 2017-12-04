@@ -91,6 +91,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             frmSelectUser selectUser = new frmSelectUser(this);
+            selectUser.MdiParent = this;
             selectUser.ShowDialog();
             
         }

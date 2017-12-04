@@ -71,7 +71,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     MessageBox.Show("Salvo!");
                 }
 
-                
+                frmModelagemCaso frmmodelcaso = new frmModelagemCaso(this);
+                frmmodelcaso.MdiParent = this;
+                frmmodelcaso.ShowDialog();
+
             }
             catch (Exception ex)
             {
@@ -93,6 +96,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             frmSelectCenario frmselectcen = new frmSelectCenario(this);
+            frmMenuPrincipal mdi = new frmMenuPrincipal();
+            frmselectcen.MdiParent = mdi;
             frmselectcen.ShowDialog();
         }
     }

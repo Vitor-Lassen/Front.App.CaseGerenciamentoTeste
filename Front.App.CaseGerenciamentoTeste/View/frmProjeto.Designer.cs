@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCodProj = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnAddSistema = new System.Windows.Forms.Button();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeProj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCodProj = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistemas)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,23 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Projeto";
+            // 
+            // txtCodProj
+            // 
+            this.txtCodProj.Enabled = false;
+            this.txtCodProj.Location = new System.Drawing.Point(68, 40);
+            this.txtCodProj.Name = "txtCodProj";
+            this.txtCodProj.Size = new System.Drawing.Size(265, 20);
+            this.txtCodProj.TabIndex = 39;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Código:";
             // 
             // btnAddSistema
             // 
@@ -234,23 +251,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "Código:";
-            // 
-            // txtCodProj
-            // 
-            this.txtCodProj.Enabled = false;
-            this.txtCodProj.Location = new System.Drawing.Point(68, 40);
-            this.txtCodProj.Name = "txtCodProj";
-            this.txtCodProj.Size = new System.Drawing.Size(265, 20);
-            this.txtCodProj.TabIndex = 39;
-            // 
             // frmProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +259,7 @@
             this.ClientSize = new System.Drawing.Size(740, 340);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmProjeto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmProjeto";
             this.Load += new System.EventHandler(this.frmProjeto_Load);
             this.groupBox1.ResumeLayout(false);

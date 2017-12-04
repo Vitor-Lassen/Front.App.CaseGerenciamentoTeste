@@ -25,24 +25,29 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void toolfrmUser_Click(object sender, EventArgs e)
         {
             var frmuser = new frmUser();
+            frmuser.MdiParent = this;
             frmuser.Show();
         }
 
         private void toolfrmProjeto_Click(object sender, EventArgs e)
         {
             var frmproj = new frmProjeto();
+            frmproj.MdiParent = this;
+            
             frmproj.Show();
         }
 
         private void toolfrmSistema_Click(object sender, EventArgs e)
         {
             var frmsis = new frmSistema();
+            frmsis.MdiParent = this;
             frmsis.Show();
         }
 
         private void toolfrmModelagem_Click(object sender, EventArgs e)
         {
             var frmmod = new frmModelagemCenario();
+            frmmod.MdiParent = this;
             frmmod.Show();
         }
 

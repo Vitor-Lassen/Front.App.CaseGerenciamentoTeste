@@ -84,6 +84,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             var frmselectproj = new frmSelectProj();
+            frmselectproj.MdiParent = this;
             frmselectproj.Show();
         }
 

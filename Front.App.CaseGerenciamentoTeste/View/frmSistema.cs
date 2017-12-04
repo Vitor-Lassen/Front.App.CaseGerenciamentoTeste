@@ -38,6 +38,7 @@ namespace Front.App.CaseGerenciamentoTeste
         private void btnConsultaSis_Click(object sender, EventArgs e)
         {
             frmSelectSistema selectSistema = new frmSelectSistema(this);
+            selectSistema.MdiParent = this;
             selectSistema.ShowDialog();
         }
 

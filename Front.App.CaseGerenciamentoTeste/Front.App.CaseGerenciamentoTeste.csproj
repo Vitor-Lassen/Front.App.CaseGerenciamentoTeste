@@ -73,6 +73,7 @@
     <Compile Include="View\frmSelectCenario.Designer.cs">
       <DependentUpon>frmSelectCenario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Limpar.cs" />
     <Compile Include="View\frmSelectProj.cs">
       <SubType>Form</SubType>
     </Compile>

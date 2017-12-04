@@ -17,9 +17,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
     public partial class frmProjeto : Form
     {
         Projeto _proj = new Projeto();
-        StatusType _status = new StatusType();
+        StatusType _status = new StatusType();  
+        InteractionAPI _api = new InteractionAPI();
+        Limpar _limpar = new Limpar();
         SistemasxProjetos _sxp = new SistemasxProjetos();
-        InteractionAPI api = new InteractionAPI();
         public frmProjeto()
         {
             InitializeComponent();
@@ -32,12 +33,12 @@ namespace Front.App.CaseGerenciamentoTeste.View
         }
         private void loadComboBox()
         {
-            cboStatus.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/listall"));
+            cboStatus.DataSource = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/statustype/select/listall"));
             cboStatus.DisplayMember = "statustype";
             cboStatus.ValueMember = "cod_status";
             cboStatus.SelectedIndex = -1;
 
-            cboAddSistema.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/sistema/select/listall"));
+            cboAddSistema.DataSource = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/sistema/select/listall"));
             cboAddSistema.DisplayMember = "nome_sis";
             cboAddSistema.ValueMember = "cod_sis";
             cboAddSistema.SelectedIndex = -1;
@@ -47,7 +48,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void btnAddSistema_Click(object sender, EventArgs e)
         {
-           var response = api.Get("api/sistema/select/all/" + cboAddSistema.SelectedValue);
+           var response = _api.Get("api/sistema/select/all/" + cboAddSistema.SelectedValue);
            Sistema sistema = JsonConvert.DeserializeObject<Sistema>(response);
            dgvSistemas.Rows.Add(sistema.cod_sis, sistema.nome_sis, sistema.sigla_sis);
         }
@@ -58,9 +59,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
             {
                 if (codProj != 0)
                 {
+                    _limpar.limpar(groupBox1);
                     InteractionAPI api = new InteractionAPI();
                     _proj = JsonConvert.DeserializeObject<Projeto>(api.Get("api/projeto/select/all/" + codProj.ToString()));
-                    carregaCampos();
+                   carregaCampos();
                 }
             }
             catch (Exception ex)
@@ -73,9 +75,15 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             txtNomeProj.Text = _proj.nome_proj;
             txtObjetivoProj.Text = _proj.objetivo_proj;
-            var response = api.Get("api/statustype/select/statustypeforcod/" + _proj.cod_status_proj);
-            cboStatus.Text = response;
-            dgvSistemas.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj));
+            var response = _api.Get("api/statustype/select/statustypeforcod/" + _proj.cod_status_proj).Replace("[", "").Replace("]", "");
+            
+            cboStatus.SelectedText  = JsonConvert.DeserializeObject<dynamic>(response).statustype;
+
+            var resultSistemasProj = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj));
+            foreach (var row in resultSistemasProj)
+            {
+                dgvSistemas.Rows.Add(row.cod_sis, row.nome_sis, row.sigla_sis);
+            }
             //var sisxproj = api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj);
             //Sistema sistema = JsonConvert.DeserializeObject<dynamic>(api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj));
             //dgvSistemas.Rows.Add(sistema.cod_sis, sistema.nome_sis, sistema.sigla_sis);
@@ -83,9 +91,9 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            var frmselectproj = new frmSelectProj();
-            frmselectproj.MdiParent = this;
-            frmselectproj.Show();
+            var frmselectproj = new frmSelectProj(this);
+            //frmselectproj.MdiParent = this;
+            frmselectproj.ShowDialog();
         }
 
         private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)

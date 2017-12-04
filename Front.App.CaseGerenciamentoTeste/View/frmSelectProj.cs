@@ -15,8 +15,9 @@ namespace Front.App.CaseGerenciamentoTeste.View
     public partial class frmSelectProj : Form
     {
         frmProjeto frmproj = new frmProjeto();
-        public frmSelectProj()
+        public frmSelectProj(frmProjeto frmproj)
         {
+            this.frmproj = frmproj;
             InitializeComponent();
         }
    

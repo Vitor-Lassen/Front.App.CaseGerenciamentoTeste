@@ -58,7 +58,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 if (codProj != 0)
                 {
                     InteractionAPI api = new InteractionAPI();
-                    _proj = JsonConvert.DeserializeObject<Projeto>(api.Get("api/projeto/select/listall/" + codProj.ToString()));
+                    _proj = JsonConvert.DeserializeObject<Projeto>(api.Get("api/projeto/select/all/" + codProj.ToString()));
                     carregaCampos();
                 }
             }
@@ -84,6 +84,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             var frmselectproj = new frmSelectProj();
             frmselectproj.Show();
+        }
+
+        private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

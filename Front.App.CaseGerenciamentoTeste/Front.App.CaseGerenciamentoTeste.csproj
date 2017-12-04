@@ -60,6 +60,12 @@
     <Compile Include="View\frmSelectProj.Designer.cs">
       <DependentUpon>frmSelectProj.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmSelectSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSelectSistema.Designer.cs">
+      <DependentUpon>frmSelectSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmSistema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="View\frmSelectProj.resx">
       <DependentUpon>frmSelectProj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSelectSistema.resx">
+      <DependentUpon>frmSelectSistema.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmSistema.resx">
       <DependentUpon>frmSistema.cs</DependentUpon>

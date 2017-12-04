@@ -38,5 +38,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
             frmproj.carregaConsulta(Convert.ToInt32(dgvProjetos.CurrentRow.Cells[0].Value));
             Close();
         }
+
+        private void frmSelectProj_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

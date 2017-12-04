@@ -64,6 +64,7 @@
             // 
             // dgvProjetos
             // 
+            this.dgvProjetos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProjetos.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvProjetos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProjetos.Location = new System.Drawing.Point(19, 56);
@@ -106,6 +107,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSelectProj";
             this.Text = "frmSelectProj";
+            this.Load += new System.EventHandler(this.frmSelectProj_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjetos)).EndInit();

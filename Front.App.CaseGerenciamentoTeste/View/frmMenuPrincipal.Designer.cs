@@ -66,6 +66,7 @@
             this.toolfrmSistema.Name = "toolfrmSistema";
             this.toolfrmSistema.Size = new System.Drawing.Size(48, 22);
             this.toolfrmSistema.Text = "Sistema";
+            this.toolfrmSistema.Click += new System.EventHandler(this.toolfrmSistema_Click);
             // 
             // frmMenuPrincipal
             // 

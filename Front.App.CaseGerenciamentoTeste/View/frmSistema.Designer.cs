@@ -30,15 +30,15 @@
         {
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSigla = new System.Windows.Forms.TextBox();
-            this.txtFuncao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnCadastroSis = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCancelaeSai = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnConsultaSis = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +56,6 @@
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(279, 20);
             this.txtSigla.TabIndex = 1;
-            // 
-            // txtFuncao
-            // 
-            this.txtFuncao.Location = new System.Drawing.Point(95, 143);
-            this.txtFuncao.Multiline = true;
-            this.txtFuncao.Name = "txtFuncao";
-            this.txtFuncao.Size = new System.Drawing.Size(279, 94);
-            this.txtFuncao.TabIndex = 2;
             // 
             // label1
             // 
@@ -84,15 +76,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Sigla:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Função:";
-            // 
             // btnCadastroSis
             // 
             this.btnCadastroSis.Location = new System.Drawing.Point(299, 280);
@@ -101,6 +84,7 @@
             this.btnCadastroSis.TabIndex = 6;
             this.btnCadastroSis.Text = "Cadastrar";
             this.btnCadastroSis.UseVisualStyleBackColor = true;
+            this.btnCadastroSis.Click += new System.EventHandler(this.btnCadastroSis_Click);
             // 
             // btnLimpar
             // 
@@ -122,6 +106,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboStatus);
             this.groupBox1.Controls.Add(this.btnConsultaSis);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.btnCancelaeSai);
@@ -129,7 +114,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnLimpar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtFuncao);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnCadastroSis);
             this.groupBox1.Location = new System.Drawing.Point(6, 14);
@@ -139,6 +123,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Sistemas";
             // 
+            // cboStatus
+            // 
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(95, 143);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(279, 21);
+            this.cboStatus.TabIndex = 10;
+            // 
             // btnConsultaSis
             // 
             this.btnConsultaSis.Location = new System.Drawing.Point(56, 280);
@@ -147,6 +139,16 @@
             this.btnConsultaSis.TabIndex = 9;
             this.btnConsultaSis.Text = "Consulta";
             this.btnConsultaSis.UseVisualStyleBackColor = true;
+            this.btnConsultaSis.Click += new System.EventHandler(this.btnConsultaSis_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Status:";
             // 
             // frmSistema
             // 
@@ -157,6 +159,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSistema";
             this.Text = "frmSistema";
+            this.Load += new System.EventHandler(this.frmSistema_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -167,14 +170,14 @@
 
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtSigla;
-        private System.Windows.Forms.TextBox txtFuncao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCadastroSis;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCancelaeSai;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnConsultaSis;
+        private System.Windows.Forms.ComboBox cboStatus;
+        private System.Windows.Forms.Label label3;
     }
 }

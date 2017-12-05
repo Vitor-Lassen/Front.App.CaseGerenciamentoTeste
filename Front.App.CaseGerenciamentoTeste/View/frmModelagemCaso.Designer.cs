@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbcaso = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtCodCen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,12 +46,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbcaso.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbcaso
             // 
+            this.gbcaso.Controls.Add(this.label3);
+            this.gbcaso.Controls.Add(this.cboStatus);
             this.gbcaso.Controls.Add(this.btnCancelar);
             this.gbcaso.Controls.Add(this.btnConsultar);
             this.gbcaso.Controls.Add(this.txtCodCen);
@@ -70,14 +74,24 @@
             this.gbcaso.Controls.Add(this.label4);
             this.gbcaso.Location = new System.Drawing.Point(12, 12);
             this.gbcaso.Name = "gbcaso";
-            this.gbcaso.Size = new System.Drawing.Size(746, 435);
+            this.gbcaso.Size = new System.Drawing.Size(746, 462);
             this.gbcaso.TabIndex = 6;
             this.gbcaso.TabStop = false;
             this.gbcaso.Text = "Definição de Casos:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(255, 433);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(327, 406);
+            this.btnConsultar.Location = new System.Drawing.Point(336, 433);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(95, 23);
             this.btnConsultar.TabIndex = 15;
@@ -87,15 +101,15 @@
             // txtCodCen
             // 
             this.txtCodCen.Enabled = false;
-            this.txtCodCen.Location = new System.Drawing.Point(465, 28);
+            this.txtCodCen.Location = new System.Drawing.Point(336, 28);
             this.txtCodCen.Name = "txtCodCen";
-            this.txtCodCen.Size = new System.Drawing.Size(269, 20);
+            this.txtCodCen.Size = new System.Drawing.Size(116, 20);
             this.txtCodCen.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(362, 31);
+            this.label2.Location = new System.Drawing.Point(233, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 13;
@@ -112,7 +126,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(428, 406);
+            this.btnLimpar.Location = new System.Drawing.Point(437, 433);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(95, 23);
             this.btnLimpar.TabIndex = 11;
@@ -126,12 +140,12 @@
             this.txtCodCaso.Location = new System.Drawing.Point(124, 28);
             this.txtCodCaso.MaxLength = 4;
             this.txtCodCaso.Name = "txtCodCaso";
-            this.txtCodCaso.Size = new System.Drawing.Size(232, 20);
+            this.txtCodCaso.Size = new System.Drawing.Size(90, 20);
             this.txtCodCaso.TabIndex = 10;
             // 
             // btnConcluiCen
             // 
-            this.btnConcluiCen.Location = new System.Drawing.Point(529, 406);
+            this.btnConcluiCen.Location = new System.Drawing.Point(538, 433);
             this.btnConcluiCen.Name = "btnConcluiCen";
             this.btnConcluiCen.Size = new System.Drawing.Size(95, 23);
             this.btnConcluiCen.TabIndex = 6;
@@ -140,16 +154,17 @@
             // 
             // btnAdicionaCaso
             // 
-            this.btnAdicionaCaso.Location = new System.Drawing.Point(630, 406);
+            this.btnAdicionaCaso.Location = new System.Drawing.Point(639, 433);
             this.btnAdicionaCaso.Name = "btnAdicionaCaso";
             this.btnAdicionaCaso.Size = new System.Drawing.Size(95, 23);
             this.btnAdicionaCaso.TabIndex = 5;
             this.btnAdicionaCaso.Text = "Adicionar";
             this.btnAdicionaCaso.UseVisualStyleBackColor = true;
+            this.btnAdicionaCaso.Click += new System.EventHandler(this.btnAdicionaCaso_Click);
             // 
             // txtMassaDado
             // 
-            this.txtMassaDado.Location = new System.Drawing.Point(124, 224);
+            this.txtMassaDado.Location = new System.Drawing.Point(124, 253);
             this.txtMassaDado.MaxLength = 200;
             this.txtMassaDado.Multiline = true;
             this.txtMassaDado.Name = "txtMassaDado";
@@ -159,7 +174,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 227);
+            this.label7.Location = new System.Drawing.Point(28, 256);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 13);
             this.label7.TabIndex = 9;
@@ -167,7 +182,7 @@
             // 
             // txtResultEsp
             // 
-            this.txtResultEsp.Location = new System.Drawing.Point(124, 321);
+            this.txtResultEsp.Location = new System.Drawing.Point(124, 349);
             this.txtResultEsp.MaxLength = 200;
             this.txtResultEsp.Multiline = true;
             this.txtResultEsp.Name = "txtResultEsp";
@@ -176,7 +191,7 @@
             // 
             // txtPreCond
             // 
-            this.txtPreCond.Location = new System.Drawing.Point(124, 124);
+            this.txtPreCond.Location = new System.Drawing.Point(124, 150);
             this.txtPreCond.MaxLength = 200;
             this.txtPreCond.Multiline = true;
             this.txtPreCond.Name = "txtPreCond";
@@ -185,7 +200,7 @@
             // 
             // txtNomeCaso
             // 
-            this.txtNomeCaso.Location = new System.Drawing.Point(124, 73);
+            this.txtNomeCaso.Location = new System.Drawing.Point(124, 84);
             this.txtNomeCaso.MaxLength = 50;
             this.txtNomeCaso.Name = "txtNomeCaso";
             this.txtNomeCaso.Size = new System.Drawing.Size(610, 20);
@@ -194,7 +209,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 324);
+            this.label6.Location = new System.Drawing.Point(20, 352);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 13);
             this.label6.TabIndex = 2;
@@ -203,7 +218,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 127);
+            this.label5.Location = new System.Drawing.Point(39, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 1;
@@ -212,27 +227,35 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 76);
+            this.label4.Location = new System.Drawing.Point(38, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Nome do Caso:";
             // 
-            // btnCancelar
+            // cboStatus
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(246, 406);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(504, 27);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(230, 21);
+            this.cboStatus.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(458, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Status:";
             // 
             // frmModelagemCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 459);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(775, 486);
             this.Controls.Add(this.gbcaso);
             this.Name = "frmModelagemCaso";
             this.Text = "frmModelagem2";
@@ -263,5 +286,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboStatus;
     }
 }

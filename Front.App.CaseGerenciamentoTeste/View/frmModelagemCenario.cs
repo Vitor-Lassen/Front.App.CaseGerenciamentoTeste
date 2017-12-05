@@ -19,6 +19,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         InteractionAPI api = new InteractionAPI();
         Cenario _cen = new Cenario();
         Limpar _limpar = new Limpar();
+        frmLogin cod = new frmLogin();
         public int codigo;
         public frmModelagemCenario()
         {
@@ -74,6 +75,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 }
                 codigo = _cen.cod_cen;
                 _limpar.limpar(gbcenario);
+                codigo = cod.cod_usu;
+                MessageBox.Show("cod_usu " + codigo);
                 frmModelagemCaso frmmodelcaso = new frmModelagemCaso(this);
                 frmmodelcaso.ShowDialog();
             }

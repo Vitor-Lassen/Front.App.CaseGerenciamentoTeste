@@ -19,10 +19,9 @@ namespace Front.App.CaseGerenciamentoTeste.View
         frmModelagemCenario frmmodelcaso = new frmModelagemCenario();
         InteractionAPI api = new InteractionAPI();
         Limpar _limpar = new Limpar();
-        public frmModelagemCaso()
-        {
-        }
-
+        Caso _caso = new Caso();
+        frmLogin cod = new frmLogin();
+        public int cod_usu_caso;
         public frmModelagemCaso(frmModelagemCenario frmmodelcaso)
         {
             this.frmmodelcaso = frmmodelcaso;
@@ -32,6 +31,17 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void frmModelagemCaso_Load(object sender, EventArgs e)
         {
             txtCodCen.Text = frmmodelcaso.codigo.ToString();
+            loadComboBox();
+        }
+
+        private void loadComboBox()
+        {
+            cboStatus.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/listall"));
+            cboStatus.DisplayMember = "statustype";
+            cboStatus.ValueMember = "cod_status";
+            cboStatus.SelectedIndex = -1;
+
+            cod_usu_caso = cod.cod_usu;
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -42,6 +52,49 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdicionaCaso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _caso.nome_caso = txtNomeCaso.Text;
+                _caso.precond_caso = txtPreCond.Text;
+                _caso.massadados_caso = txtMassaDado.Text;
+                _caso.resultesp_caso = txtResultEsp.Text;
+                _caso.cod_usu_caso = cod_usu_caso;
+                //_caso.resultesp_caso = " ";
+                _caso.cod_cen_caso = Convert.ToInt32(txtCodCen.Text);
+                _caso.cod_status_caso = Convert.ToInt32(cboStatus.SelectedValue);
+                //se for nulo, cria
+                if (String.IsNullOrEmpty(txtCodCaso.Text))
+                {
+                    InteractionAPI api = new InteractionAPI();
+                    carregaCampos();
+                    var response = api.Post("api/caso/create", _caso);
+                    _caso = JsonConvert.DeserializeObject<Caso>(response);
+                    MessageBox.Show("Salvo!");
+                }
+                //se nao for nulo, altera
+                else
+                {
+                    _caso.cod_caso = Convert.ToInt32(txtCodCaso.Text);
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/caso/update", _caso);
+                    _caso = JsonConvert.DeserializeObject<Caso>(response);
+                    MessageBox.Show("Salvo!");
+                }
+                _limpar.limpar(gbcaso);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void carregaCampos()
+        {
+            txtCodCaso.Text = _caso.cod_caso.ToString();
         }
     }
     }

@@ -14,5 +14,6 @@ namespace Back.DB.CaseGerenciamentoTeste.Models
         public bool trocasenha { get; set; }
         public string nomeUsu { get; set; }
         public string sobrenome { get; set; }
+        public int cod_usu { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 {
     public partial class frmMenuPrincipal : Form
     {
+        frmLogin cod = new frmLogin();
         public frmMenuPrincipal()
         {
             InitializeComponent();
@@ -48,6 +49,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             var frmmod = new frmModelagemCenario();
             frmmod.MdiParent = this;
+            MessageBox.Show("cod_usu " + cod.cod_usu);
             frmmod.Show();
         }
 

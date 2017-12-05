@@ -21,6 +21,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
             InitializeComponent();
         }
 
+        public int cod_usu;
+
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             try
@@ -29,7 +31,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 _auth.user = txtLogin.Text;
                 _auth.password = txtSenha.Text;
                 InteractionAPI api = new InteractionAPI();
-                _auth =JsonConvert.DeserializeObject<Auth> (api.Post("api/auth", _auth));
+                _auth = JsonConvert.DeserializeObject<Auth> (api.Post("api/auth", _auth));
                 if ((bool)_auth.auth)
                 {
                     if ((bool)_auth.trocasenha)
@@ -40,6 +42,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     }
                     else
                     {
+                        cod_usu = _auth.cod_usu;
+                        MessageBox.Show("cod_usu " + cod_usu);
                         var frmmainmenu = new frmMenuPrincipal();
                         frmmainmenu.Show();
                         this.Close();

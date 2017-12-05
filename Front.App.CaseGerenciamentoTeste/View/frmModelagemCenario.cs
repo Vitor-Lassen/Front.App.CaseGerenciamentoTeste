@@ -18,6 +18,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
     {
         InteractionAPI api = new InteractionAPI();
         Cenario _cen = new Cenario();
+        Limpar _limpar = new Limpar();
+        public int codigo;
         public frmModelagemCenario()
         {
             InitializeComponent();
@@ -70,11 +72,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     carregaCampos();
                     MessageBox.Show("Salvo!");
                 }
-
+                codigo = _cen.cod_cen;
+                _limpar.limpar(gbcenario);
                 frmModelagemCaso frmmodelcaso = new frmModelagemCaso(this);
-                frmmodelcaso.MdiParent = this;
                 frmmodelcaso.ShowDialog();
-
             }
             catch (Exception ex)
             {
@@ -96,9 +97,17 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             frmSelectCenario frmselectcen = new frmSelectCenario(this);
-            frmMenuPrincipal mdi = new frmMenuPrincipal();
-            frmselectcen.MdiParent = mdi;
             frmselectcen.ShowDialog();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            _limpar.limpar(gbcenario);
+        }
+
+        private void btnCancelaCen_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -36,11 +36,11 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCancelaeSai = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodSis = new System.Windows.Forms.TextBox();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnConsultaSis = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodSis = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +96,7 @@
             this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnCancelaeSai
             // 
@@ -105,6 +106,7 @@
             this.btnCancelaeSai.TabIndex = 8;
             this.btnCancelaeSai.Text = "Cancelar";
             this.btnCancelaeSai.UseVisualStyleBackColor = true;
+            this.btnCancelaeSai.Click += new System.EventHandler(this.btnCancelaeSai_Click);
             // 
             // groupBox1
             // 
@@ -126,6 +128,23 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Sistemas";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Código:";
+            // 
+            // txtCodSis
+            // 
+            this.txtCodSis.Enabled = false;
+            this.txtCodSis.Location = new System.Drawing.Point(95, 39);
+            this.txtCodSis.Name = "txtCodSis";
+            this.txtCodSis.Size = new System.Drawing.Size(279, 20);
+            this.txtCodSis.TabIndex = 11;
             // 
             // cboStatus
             // 
@@ -153,23 +172,6 @@
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Status:";
-            // 
-            // txtCodSis
-            // 
-            this.txtCodSis.Enabled = false;
-            this.txtCodSis.Location = new System.Drawing.Point(95, 39);
-            this.txtCodSis.Name = "txtCodSis";
-            this.txtCodSis.Size = new System.Drawing.Size(279, 20);
-            this.txtCodSis.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Código:";
             // 
             // frmSistema
             // 

@@ -21,6 +21,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
     public partial class frmUser : Form
     {
         User _user = new User();
+        Limpar _limpar = new Limpar();
+        
         public frmUser()
         {
             InitializeComponent();
@@ -28,16 +30,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void txtCod_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtCod.Text))
-            {
-                btnNovo.Visible = false;
-                btnSalvar.Text = "Cadastrar";
-            }
-            else
-            {
-                btnNovo.Visible = true;
-                btnSalvar.Text = "Salvar"; 
-            }
+            
         }
         private void carregaCampos()
         {
@@ -78,9 +71,9 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     _user = JsonConvert.DeserializeObject<User>(response);
                     carregaCampos();
                     MessageBox.Show("Salvo!");
-                    btnNovo.Visible = true;
-                    btnSalvar.Text = "Salvar";
+                    
                 }
+                _limpar.limpar(groupBox1);
             }
             catch(Exception ex)
             {
@@ -91,7 +84,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             frmSelectUser selectUser = new frmSelectUser(this);
-            selectUser.MdiParent = this;
+            
             selectUser.ShowDialog();
             
         }
@@ -119,6 +112,16 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            _limpar.limpar(groupBox1);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

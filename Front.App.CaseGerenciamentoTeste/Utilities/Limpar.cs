@@ -72,6 +72,10 @@ namespace Front.App.CaseGerenciamentoTeste.Utilities
                 {
                     ((RichTextBox)p.Controls[i]).Clear();
                 }
+                else if (p.Controls[i] is CheckBox)
+                {
+                    ((CheckBox)p.Controls[i]).Checked = false;
+                }
             }
         }
         public void limpar(Form f) // CRIAÇÃO DO MÉTODO, USANDO O PARÂMETRO f QUE REPRESENTA O FORM 
@@ -104,6 +108,10 @@ namespace Front.App.CaseGerenciamentoTeste.Utilities
                 {
                     ((RichTextBox)f.Controls[i]).Clear();
                 }
+                else if(f.Controls[i] is CheckBox)
+                {
+                    ((CheckBox)f.Controls[i]).Checked = false;
+                }
             }
         }
         public void limpar(GroupBox g) // CRIAÇÃO DO MÉTODO, USANDO O PARÂMETRO f QUE REPRESENTA O FORM 
@@ -135,6 +143,10 @@ namespace Front.App.CaseGerenciamentoTeste.Utilities
                 else if (g.Controls[i] is RichTextBox)
                 {
                     ((RichTextBox)g.Controls[i]).Clear();
+                }
+                else if(g.Controls[i] is CheckBox)
+                {
+                    ((CheckBox)g.Controls[i]).Checked = false;
                 }
             }
         }

@@ -42,8 +42,6 @@ namespace Front.App.CaseGerenciamentoTeste.View
             cboAddSistema.DisplayMember = "nome_sis";
             cboAddSistema.ValueMember = "cod_sis";
             cboAddSistema.SelectedIndex = -1;
-
-
         }
 
         private void btnAddSistema_Click(object sender, EventArgs e)
@@ -62,7 +60,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     _limpar.limpar(groupBox1);
                     InteractionAPI api = new InteractionAPI();
                     _proj = JsonConvert.DeserializeObject<Projeto>(api.Get("api/projeto/select/all/" + codProj.ToString()));
-                   carregaCampos();
+                    carregaCampos();
                 }
             }
             catch (Exception ex)
@@ -75,6 +73,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             txtNomeProj.Text = _proj.nome_proj;
             txtObjetivoProj.Text = _proj.objetivo_proj;
+            txtCodProj.Text = _proj.cod_proj.ToString();
             var response = _api.Get("api/statustype/select/statustypeforcod/" + _proj.cod_status_proj).Replace("[", "").Replace("]", "");
             
             cboStatus.SelectedText  = JsonConvert.DeserializeObject<dynamic>(response).statustype;
@@ -84,15 +83,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
             {
                 dgvSistemas.Rows.Add(row.cod_sis, row.nome_sis, row.sigla_sis);
             }
-            //var sisxproj = api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj);
-            //Sistema sistema = JsonConvert.DeserializeObject<dynamic>(api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj));
-            //dgvSistemas.Rows.Add(sistema.cod_sis, sistema.nome_sis, sistema.sigla_sis);
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             var frmselectproj = new frmSelectProj(this);
-            //frmselectproj.MdiParent = this;
             frmselectproj.ShowDialog();
         }
 
@@ -128,6 +123,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     MessageBox.Show("Salvo!");
                 }
                 salvaSistemasXProjeto();
+                _limpar.limpar(groupBox1);
             }
             catch (Exception ex)
             {
@@ -138,7 +134,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         public void salvaSistemasXProjeto()
         {
             int i;
-            for (i=0;i<=dgvSistemas.RowCount;i++)
+            for (i=0;i<=2;i++)
             {
                 _sxp.cod_proj_projxsis = Convert.ToInt32(txtCodProj.Text);
                 _sxp.cod_proj_projxsis = Convert.ToInt32(dgvSistemas.Rows[i].Cells[0].Value);
@@ -146,6 +142,16 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 var response = api.Post("api/projetoxsistema/create", _sxp);
                 _sxp = JsonConvert.DeserializeObject<SistemasxProjetos>(response);
             }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            _limpar.limpar(groupBox1);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

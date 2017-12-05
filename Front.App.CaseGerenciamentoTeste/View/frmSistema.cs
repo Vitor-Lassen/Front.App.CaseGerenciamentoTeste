@@ -19,7 +19,7 @@ namespace Front.App.CaseGerenciamentoTeste
     {
         Sistema _sis = new Sistema();
         InteractionAPI api = new InteractionAPI();
-
+        Limpar _limpar = new Limpar();
         public frmSistema()
         {
             InitializeComponent();
@@ -106,11 +106,22 @@ namespace Front.App.CaseGerenciamentoTeste
                     carregaCampos();
                     MessageBox.Show("Salvo!");
                 }
+                _limpar.limpar(groupBox1);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-}
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            _limpar.limpar(groupBox1);
+        }
+
+        private void btnCancelaeSai_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

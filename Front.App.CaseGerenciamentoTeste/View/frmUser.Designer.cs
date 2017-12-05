@@ -44,7 +44,7 @@
             this.txtCod = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.chekTrocaSenha = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -192,16 +192,17 @@
             this.btnCancelar.TabIndex = 27;
             this.btnCancelar.Text = "Cancelar ";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnNovo
+            // btnLimpar
             // 
-            this.btnNovo.Location = new System.Drawing.Point(155, 202);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(94, 30);
-            this.btnNovo.TabIndex = 28;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Visible = false;
+            this.btnLimpar.Location = new System.Drawing.Point(155, 202);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(94, 30);
+            this.btnLimpar.TabIndex = 28;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnConsultar
             // 
@@ -231,7 +232,7 @@
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.txtSobrenome);
-            this.groupBox1.Controls.Add(this.btnNovo);
+            this.groupBox1.Controls.Add(this.btnLimpar);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.label1);
@@ -286,7 +287,7 @@
         private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.CheckBox chekTrocaSenha;
         private System.Windows.Forms.GroupBox groupBox1;

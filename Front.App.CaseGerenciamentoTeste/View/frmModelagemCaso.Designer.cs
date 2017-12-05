@@ -30,11 +30,11 @@
         {
             this.gbcaso = new System.Windows.Forms.GroupBox();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodCen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.txtCodCen = new System.Windows.Forms.TextBox();
+            this.txtCodCaso = new System.Windows.Forms.TextBox();
             this.btnConcluiCen = new System.Windows.Forms.Button();
             this.btnAdicionaCaso = new System.Windows.Forms.Button();
             this.txtMassaDado = new System.Windows.Forms.TextBox();
@@ -45,17 +45,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbcaso.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbcaso
             // 
+            this.gbcaso.Controls.Add(this.btnCancelar);
             this.gbcaso.Controls.Add(this.btnConsultar);
-            this.gbcaso.Controls.Add(this.textBox1);
+            this.gbcaso.Controls.Add(this.txtCodCen);
             this.gbcaso.Controls.Add(this.label2);
             this.gbcaso.Controls.Add(this.label1);
             this.gbcaso.Controls.Add(this.btnLimpar);
-            this.gbcaso.Controls.Add(this.txtCodCen);
+            this.gbcaso.Controls.Add(this.txtCodCaso);
             this.gbcaso.Controls.Add(this.btnConcluiCen);
             this.gbcaso.Controls.Add(this.btnAdicionaCaso);
             this.gbcaso.Controls.Add(this.txtMassaDado);
@@ -82,13 +84,13 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtCodCen
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(465, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtCodCen.Enabled = false;
+            this.txtCodCen.Location = new System.Drawing.Point(465, 28);
+            this.txtCodCen.Name = "txtCodCen";
+            this.txtCodCen.Size = new System.Drawing.Size(269, 20);
+            this.txtCodCen.TabIndex = 14;
             // 
             // label2
             // 
@@ -116,15 +118,16 @@
             this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // txtCodCen
+            // txtCodCaso
             // 
-            this.txtCodCen.Enabled = false;
-            this.txtCodCen.Location = new System.Drawing.Point(124, 28);
-            this.txtCodCen.MaxLength = 4;
-            this.txtCodCen.Name = "txtCodCen";
-            this.txtCodCen.Size = new System.Drawing.Size(232, 20);
-            this.txtCodCen.TabIndex = 10;
+            this.txtCodCaso.Enabled = false;
+            this.txtCodCaso.Location = new System.Drawing.Point(124, 28);
+            this.txtCodCaso.MaxLength = 4;
+            this.txtCodCaso.Name = "txtCodCaso";
+            this.txtCodCaso.Size = new System.Drawing.Size(232, 20);
+            this.txtCodCaso.TabIndex = 10;
             // 
             // btnConcluiCen
             // 
@@ -215,6 +218,16 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Nome do Caso:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(246, 406);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmModelagemCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,11 +247,11 @@
 
         private System.Windows.Forms.GroupBox gbcaso;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodCen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.TextBox txtCodCen;
+        private System.Windows.Forms.TextBox txtCodCaso;
         private System.Windows.Forms.Button btnConcluiCen;
         private System.Windows.Forms.Button btnAdicionaCaso;
         private System.Windows.Forms.TextBox txtMassaDado;
@@ -249,5 +262,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

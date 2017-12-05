@@ -18,6 +18,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
     {
         frmModelagemCenario frmmodelcaso = new frmModelagemCenario();
         InteractionAPI api = new InteractionAPI();
+        Limpar _limpar = new Limpar();
+        public frmModelagemCaso()
+        {
+        }
+
         public frmModelagemCaso(frmModelagemCenario frmmodelcaso)
         {
             this.frmmodelcaso = frmmodelcaso;
@@ -26,12 +31,17 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void frmModelagemCaso_Load(object sender, EventArgs e)
         {
-            loadComboBox();
-
+            txtCodCen.Text = frmmodelcaso.codigo.ToString();
         }
-        private void loadComboBox()
+
+        private void btnLimpar_Click(object sender, EventArgs e)
         {
-            
+            _limpar.limpar(gbcaso);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

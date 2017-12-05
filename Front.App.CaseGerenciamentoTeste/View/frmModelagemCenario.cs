@@ -95,12 +95,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
             txtCodCen.Text = _cen.cod_cen.ToString();
             txtDesc.Text = _cen.descri_cen;
             txtNomeCen.Text = _cen.nome_cen;
-<<<<<<< Updated upstream
-            
-=======
+        
+
             _proj = JsonConvert.DeserializeObject<Projeto>(api.Get("api/projeto/select/all/"+_cen.cod_proj_cen));
             cboProj.SelectedIndex = cboProj.FindStringExact(_proj.nome_proj);
->>>>>>> Stashed changes
+
             string status = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/statustypeforcod/" + _cen.cod_status_cen)).statustype;
             cboStatus.SelectedIndex = cboStatus.FindStringExact(status);
         }

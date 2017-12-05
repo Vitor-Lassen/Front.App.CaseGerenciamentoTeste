@@ -16,21 +16,24 @@ namespace Front.App.CaseGerenciamentoTeste.View
 {
     public partial class frmModelagemCaso : Form
     {
-        frmModelagemCenario frmmodelcaso = new frmModelagemCenario();
+        
         InteractionAPI api = new InteractionAPI();
         Limpar _limpar = new Limpar();
         Caso _caso = new Caso();
-        frmLogin cod = new frmLogin();
-        public int cod_usu_caso;
-        public frmModelagemCaso(frmModelagemCenario frmmodelcaso)
+        Auth _auth = new Auth();
+        Cenario _cen = new Cenario();
+        frmModelagemCenario frm = new frmModelagemCenario();
+        
+        public frmModelagemCaso(Cenario _cen, Auth _auth, frmModelagemCenario frm)
         {
-            this.frmmodelcaso = frmmodelcaso;
+            this._cen = _cen;
+            this._auth = _auth;
             InitializeComponent();
         }
 
         private void frmModelagemCaso_Load(object sender, EventArgs e)
         {
-            txtCodCen.Text = frmmodelcaso.codigo.ToString();
+            txtCodCen.Text = _cen.cod_cen.ToString();
             loadComboBox();
         }
 
@@ -40,8 +43,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
             cboStatus.DisplayMember = "statustype";
             cboStatus.ValueMember = "cod_status";
             cboStatus.SelectedIndex = -1;
-
-            cod_usu_caso = cod.cod_usu;
+           
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -62,7 +64,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 _caso.precond_caso = txtPreCond.Text;
                 _caso.massadados_caso = txtMassaDado.Text;
                 _caso.resultesp_caso = txtResultEsp.Text;
-                _caso.cod_usu_caso = cod_usu_caso;
+                _caso.cod_usu_caso = _auth.cod_usu;
                 //_caso.resultesp_caso = " ";
                 _caso.cod_cen_caso = Convert.ToInt32(txtCodCen.Text);
                 _caso.cod_status_caso = Convert.ToInt32(cboStatus.SelectedValue);

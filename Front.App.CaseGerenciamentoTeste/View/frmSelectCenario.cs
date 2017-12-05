@@ -17,10 +17,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
 {
     public partial class frmSelectCenario : Form
     {
-        frmModelagemCenario frmmodcen = new frmModelagemCenario();
-        public frmSelectCenario(frmModelagemCenario frmmodelagemcen)
+        
+        public frmSelectCenario()
         {
-            this.frmmodcen = frmmodelagemcen;
+            
             InitializeComponent();
         }
 

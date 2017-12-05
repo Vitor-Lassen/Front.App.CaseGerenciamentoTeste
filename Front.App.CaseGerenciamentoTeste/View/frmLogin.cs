@@ -21,8 +21,6 @@ namespace Front.App.CaseGerenciamentoTeste.View
             InitializeComponent();
         }
 
-        public int cod_usu;
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             try
@@ -42,9 +40,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     }
                     else
                     {
-                        cod_usu = _auth.cod_usu;
-                        MessageBox.Show("cod_usu " + cod_usu);
-                        var frmmainmenu = new frmMenuPrincipal();
+                        var frmmainmenu = new frmMenuPrincipal(_auth);
                         frmmainmenu.Show();
                         this.Close();
                     }

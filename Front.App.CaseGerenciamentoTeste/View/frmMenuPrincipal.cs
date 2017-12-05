@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Back.DB.CaseGerenciamentoTeste.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
 {
     public partial class frmMenuPrincipal : Form
     {
-        frmLogin cod = new frmLogin();
-        public frmMenuPrincipal()
+        Auth _auth = new Auth();
+        public frmMenuPrincipal(Auth _auth)
         {
+            this._auth = _auth;
             InitializeComponent();
         }
 
@@ -47,9 +49,9 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void toolfrmModelagem_Click(object sender, EventArgs e)
         {
-            var frmmod = new frmModelagemCenario();
+            var frmmod = new frmModelagemCenario(_auth);
             frmmod.MdiParent = this;
-            MessageBox.Show("cod_usu " + cod.cod_usu);
+            MessageBox.Show("" + _auth.cod_usu);
             frmmod.Show();
         }
 

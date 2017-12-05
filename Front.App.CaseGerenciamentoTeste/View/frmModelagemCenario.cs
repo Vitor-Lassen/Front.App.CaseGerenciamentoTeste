@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Back.DB.CaseGerenciamentoTeste.Models;
 
 namespace Front.App.CaseGerenciamentoTeste.View
 {
@@ -19,10 +20,11 @@ namespace Front.App.CaseGerenciamentoTeste.View
         InteractionAPI api = new InteractionAPI();
         Cenario _cen = new Cenario();
         Limpar _limpar = new Limpar();
-        frmLogin cod = new frmLogin();
-        public int codigo;
-        public frmModelagemCenario()
+        Auth _auth = new Auth();
+        
+        public frmModelagemCenario(Auth _auth)
         {
+            this._auth = _auth;
             InitializeComponent();
         }
 
@@ -73,11 +75,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     carregaCampos();
                     MessageBox.Show("Salvo!");
                 }
-                codigo = _cen.cod_cen;
                 _limpar.limpar(gbcenario);
-                codigo = cod.cod_usu;
-                MessageBox.Show("cod_usu " + codigo);
-                frmModelagemCaso frmmodelcaso = new frmModelagemCaso(this);
+                var frmmodelcaso = new frmModelagemCaso(this, _auth, _cen);
                 frmmodelcaso.ShowDialog();
             }
             catch (Exception ex)
@@ -99,7 +98,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            frmSelectCenario frmselectcen = new frmSelectCenario(this);
+            frmSelectCenario frmselectcen = new frmSelectCenario();
             frmselectcen.ShowDialog();
         }
 

@@ -58,9 +58,8 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 if (codProj != 0)
                 {
                     _limpar.limpar(groupBox1);
-                    InteractionAPI api = new InteractionAPI();
-                    _proj = JsonConvert.DeserializeObject<Projeto>(api.Get("api/projeto/select/all/" + codProj.ToString()));
-                    carregaCampos();
+                    _proj = JsonConvert.DeserializeObject<Projeto>(_api.Get("api/projeto/select/all/" + codProj.ToString()));
+                   carregaCampos();
                 }
             }
             catch (Exception ex)
@@ -81,7 +80,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
             var resultSistemasProj = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj));
             foreach (var row in resultSistemasProj)
             {
-                dgvSistemas.Rows.Add(row.cod_sis, row.nome_sis, row.sigla_sis);
+                dgvSistemas.Rows.Add(row.cod_sis, row.nome_sis, row.sigla_sis,row.cod_projxsis);
             }
         }
 
@@ -102,25 +101,18 @@ namespace Front.App.CaseGerenciamentoTeste.View
             {
                 _proj.nome_proj = txtNomeProj.Text;
                 _proj.objetivo_proj = txtObjetivoProj.Text;
-                _proj.cod_status_proj = Convert.ToInt32(cboStatus.ValueMember);
+                _proj.cod_status_proj = Convert.ToInt32(cboStatus.SelectedValue);
                 //se for nulo, cria
                 if (String.IsNullOrEmpty(txtCodProj.Text))
                 {
-                    InteractionAPI api = new InteractionAPI();
-                    var response = api.Post("api/projeto/create", _proj);
+                    var response = _api.Post("api/projeto/create", _proj);
                     _proj = JsonConvert.DeserializeObject<Projeto>(response);
-                    carregaCampos();
-                    MessageBox.Show("Salvo!");
                 }
                 //se nao for nulo, altera
                 else
                 {
-                    _proj.cod_proj = Convert.ToInt32(txtCodProj.Text);
-                    InteractionAPI api = new InteractionAPI();
-                    var response = api.Post("api/projeto/update", _proj);
+                    var response = _api.Post("api/projeto/update", _proj);
                     _proj = JsonConvert.DeserializeObject<Projeto>(response);
-                    carregaCampos();
-                    MessageBox.Show("Salvo!");
                 }
                 salvaSistemasXProjeto();
                 _limpar.limpar(groupBox1);
@@ -133,14 +125,18 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         public void salvaSistemasXProjeto()
         {
-            int i;
-            for (i=0;i<=2;i++)
+
+            _sxp.cod_proj_projxsis = _proj.cod_proj;
+            foreach (DataGridViewRow row in dgvSistemas.Rows)
             {
-                _sxp.cod_proj_projxsis = Convert.ToInt32(txtCodProj.Text);
-                _sxp.cod_proj_projxsis = Convert.ToInt32(dgvSistemas.Rows[i].Cells[0].Value);
-                InteractionAPI api = new InteractionAPI();
-                var response = api.Post("api/projetoxsistema/create", _sxp);
-                _sxp = JsonConvert.DeserializeObject<SistemasxProjetos>(response);
+                if (row.Cells[3].Value == null)
+                {
+                    _sxp.cod_sis_projxsis = Convert.ToInt32(row.Cells[0].Value);
+                    
+                    var response = _api.Post("api/projetoxsistema/create", _sxp);
+                    _sxp = JsonConvert.DeserializeObject<SistemasxProjetos>(response);
+                    row.Cells[3].Value = _sxp.cod_projxsis;
+                }
             }
         }
 

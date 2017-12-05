@@ -41,13 +41,14 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSistemas = new System.Windows.Forms.DataGridView();
-            this.CodSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNomeSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSiglaSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObjetivoProj = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeProj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CodSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNomeSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSiglaSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodProjxSis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistemas)).BeginInit();
             this.SuspendLayout();
@@ -190,32 +191,14 @@
             this.dgvSistemas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodSis,
             this.txtNomeSis,
-            this.txtSiglaSis});
+            this.txtSiglaSis,
+            this.txtCodProjxSis});
             this.dgvSistemas.Location = new System.Drawing.Point(373, 135);
             this.dgvSistemas.Name = "dgvSistemas";
             this.dgvSistemas.ReadOnly = true;
             this.dgvSistemas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSistemas.Size = new System.Drawing.Size(295, 101);
             this.dgvSistemas.TabIndex = 10;
-            // 
-            // CodSis
-            // 
-            this.CodSis.HeaderText = "Código";
-            this.CodSis.Name = "CodSis";
-            this.CodSis.ReadOnly = true;
-            this.CodSis.Visible = false;
-            // 
-            // txtNomeSis
-            // 
-            this.txtNomeSis.HeaderText = "Sistema";
-            this.txtNomeSis.Name = "txtNomeSis";
-            this.txtNomeSis.ReadOnly = true;
-            // 
-            // txtSiglaSis
-            // 
-            this.txtSiglaSis.HeaderText = "Sigla";
-            this.txtSiglaSis.Name = "txtSiglaSis";
-            this.txtSiglaSis.ReadOnly = true;
             // 
             // txtObjetivoProj
             // 
@@ -252,6 +235,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
+            // CodSis
+            // 
+            this.CodSis.HeaderText = "Código";
+            this.CodSis.Name = "CodSis";
+            this.CodSis.ReadOnly = true;
+            this.CodSis.Visible = false;
+            // 
+            // txtNomeSis
+            // 
+            this.txtNomeSis.HeaderText = "Sistema";
+            this.txtNomeSis.Name = "txtNomeSis";
+            this.txtNomeSis.ReadOnly = true;
+            // 
+            // txtSiglaSis
+            // 
+            this.txtSiglaSis.HeaderText = "Sigla";
+            this.txtSiglaSis.Name = "txtSiglaSis";
+            this.txtSiglaSis.ReadOnly = true;
+            // 
+            // txtCodProjxSis
+            // 
+            this.txtCodProjxSis.HeaderText = "codProjxSis";
+            this.txtCodProjxSis.Name = "txtCodProjxSis";
+            this.txtCodProjxSis.ReadOnly = true;
+            // 
             // frmProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,10 +295,11 @@
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboAddSistema;
+        private System.Windows.Forms.TextBox txtCodProj;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodSis;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtNomeSis;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtSiglaSis;
-        private System.Windows.Forms.TextBox txtCodProj;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtCodProjxSis;
     }
 }

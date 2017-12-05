@@ -76,7 +76,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     MessageBox.Show("Salvo!");
                 }
                 _limpar.limpar(gbcenario);
-                var frmmodelcaso = new frmModelagemCaso(this, _auth, _cen);
+                var frmmodelcaso = new frmModelagemCaso(_cen, _auth, this);
                 frmmodelcaso.ShowDialog();
             }
             catch (Exception ex)

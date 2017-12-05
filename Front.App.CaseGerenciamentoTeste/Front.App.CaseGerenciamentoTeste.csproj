@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Caso.cs" />
     <Compile Include="Model\Projeto.cs" />
     <Compile Include="Model\SistemasxProjetos.cs" />
     <Compile Include="Model\StatusType.cs" />
     <Compile Include="Model\Cenario.cs" />
-    <Compile Include="Model\Caso.cs" />
     <Compile Include="View\frmModelagemCenario.cs">
       <SubType>Form</SubType>
     </Compile>

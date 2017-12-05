@@ -22,7 +22,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         Caso _caso = new Caso();
         Auth _auth = new Auth();
         Cenario _cen = new Cenario();
-        frmModelagemCenario frm = new frmModelagemCenario();
+        frmModelagemCenario frm = null;
         
         public frmModelagemCaso(Cenario _cen, Auth _auth, frmModelagemCenario frm)
         {

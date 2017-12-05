@@ -18,7 +18,7 @@ namespace Front.App.CaseGerenciamentoTeste
     public partial class frmSistema : Form
     {
         Sistema _sis = new Sistema();
-        InteractionAPI api = new InteractionAPI();
+        InteractionAPI _api = new InteractionAPI();
         Limpar _limpar = new Limpar();
         public frmSistema()
         {
@@ -38,7 +38,7 @@ namespace Front.App.CaseGerenciamentoTeste
         private void btnConsultaSis_Click(object sender, EventArgs e)
         {
             frmSelectSistema selectSistema = new frmSelectSistema(this);
-            selectSistema.MdiParent = this;
+            //selectSistema.MdiParent = this;
             selectSistema.ShowDialog();
         }
 
@@ -48,8 +48,7 @@ namespace Front.App.CaseGerenciamentoTeste
             {
                 if (codSis != 0)
                 {
-                    InteractionAPI api = new InteractionAPI();
-                    _sis = JsonConvert.DeserializeObject<Sistema>(api.Get("api/sistema/select/all/" + codSis.ToString()));
+                    _sis = JsonConvert.DeserializeObject<Sistema>(_api.Get("api/sistema/select/all/" + codSis.ToString()));
                     carregaCampos();
                 }
             }
@@ -64,11 +63,12 @@ namespace Front.App.CaseGerenciamentoTeste
             txtCodSis.Text = _sis.cod_sis.ToString();
             txtNome.Text = _sis.nome_sis;
             txtSigla.Text = _sis.sigla_sis;
-            cboStatus.SelectedItem = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/statustypeforcod/" + _sis.cod_status_sis));
+            string status = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/statustype/select/statustypeforcod/" + _sis.cod_status_sis)).statustype;
+            cboStatus.SelectedIndex = cboStatus.FindStringExact(status);
         }
         private void loadComboBox()
         {
-            cboStatus.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/listall"));
+            cboStatus.DataSource = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/statustype/select/listall"));
             cboStatus.DisplayMember = "statustype";
             cboStatus.ValueMember = "cod_status";
             cboStatus.SelectedIndex = -1;

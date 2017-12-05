@@ -73,10 +73,9 @@ namespace Front.App.CaseGerenciamentoTeste.View
             txtNomeProj.Text = _proj.nome_proj;
             txtObjetivoProj.Text = _proj.objetivo_proj;
             txtCodProj.Text = _proj.cod_proj.ToString();
-            var response = _api.Get("api/statustype/select/statustypeforcod/" + _proj.cod_status_proj).Replace("[", "").Replace("]", "");
             
-            cboStatus.SelectedText  = JsonConvert.DeserializeObject<dynamic>(response).statustype;
-
+            string status = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/statustype/select/statustypeforcod/" + _proj.cod_status_proj)).statustype;
+            cboStatus.SelectedIndex  = cboStatus.FindStringExact(status);
             var resultSistemasProj = JsonConvert.DeserializeObject<dynamic>(_api.Get("api/sistema/select/sistemasprojeto/" + _proj.cod_proj));
             foreach (var row in resultSistemasProj)
             {

@@ -40,9 +40,9 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     }
                     else
                     {
+                        this.Close();
                         var frmmainmenu = new frmMenuPrincipal(_auth);
                         frmmainmenu.Show();
-                        this.Close();
                     }
                 }
                 else

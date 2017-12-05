@@ -1,4 +1,6 @@
 ﻿using Back.DB.CaseGerenciamentoTeste.Models;
+using Front.App.CaseGerenciamentoTeste.View;
+using Front.App.CaseGerenciamentoTeste.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +53,6 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             var frmmod = new frmModelagemCenario(_auth);
             frmmod.MdiParent = this;
-            MessageBox.Show("" + _auth.cod_usu);
             frmmod.Show();
         }
 
@@ -64,6 +65,12 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             frmLogin login = new frmLogin();
             login.Show();
+        }
+
+        private void toolExec_Click(object sender, EventArgs e)
+        {
+            frmExecucao exec = new frmExecucao();
+            exec.Show();
         }
     }
 }

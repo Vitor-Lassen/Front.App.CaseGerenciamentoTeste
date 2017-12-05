@@ -52,10 +52,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Caso.cs" />
+    <Compile Include="Model\Execucao.cs" />
     <Compile Include="Model\Projeto.cs" />
     <Compile Include="Model\SistemasxProjetos.cs" />
-    <Compile Include="Model\StatusType.cs" />
     <Compile Include="Model\Cenario.cs" />
+    <Compile Include="View\frmExecucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmExecucao.Designer.cs">
+      <DependentUpon>frmExecucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmExecucaoContinua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmExecucaoContinua.Designer.cs">
+      <DependentUpon>frmExecucaoContinua.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmModelagemCenario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +148,6 @@
     <Compile Include="View\frmSplash.Designer.cs">
       <DependentUpon>frmSplash.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmStatus.Designer.cs">
-      <DependentUpon>frmStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\frmTrocarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,12 @@
     <Compile Include="View\frmUser.Designer.cs">
       <DependentUpon>frmUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmExecucao.resx">
+      <DependentUpon>frmExecucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmExecucaoContinua.resx">
+      <DependentUpon>frmExecucaoContinua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmModelagemCenario.resx">
       <DependentUpon>frmModelagemCenario.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,9 +210,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmStatus.resx">
-      <DependentUpon>frmStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmTrocarSenha.resx">
       <DependentUpon>frmTrocarSenha.cs</DependentUpon>

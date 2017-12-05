@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolfrmUser = new System.Windows.Forms.ToolStripLabel();
             this.toolfrmProjeto = new System.Windows.Forms.ToolStripLabel();
             this.toolfrmSistema = new System.Windows.Forms.ToolStripLabel();
             this.toolfrmModelagem = new System.Windows.Forms.ToolStripLabel();
             this.toolFechar = new System.Windows.Forms.ToolStripLabel();
+            this.toolExec = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +46,8 @@
             this.toolfrmProjeto,
             this.toolfrmSistema,
             this.toolfrmModelagem,
-            this.toolFechar});
+            this.toolFechar,
+            this.toolExec});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(756, 25);
@@ -87,6 +90,13 @@
             this.toolFechar.Text = "Encerrar";
             this.toolFechar.Click += new System.EventHandler(this.toolFechar_Click);
             // 
+            // toolExec
+            // 
+            this.toolExec.Name = "toolExec";
+            this.toolExec.Size = new System.Drawing.Size(56, 22);
+            this.toolExec.Text = "Execução";
+            this.toolExec.Click += new System.EventHandler(this.toolExec_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +104,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(756, 352);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -115,5 +126,6 @@
         private System.Windows.Forms.ToolStripLabel toolfrmSistema;
         private System.Windows.Forms.ToolStripLabel toolfrmModelagem;
         private System.Windows.Forms.ToolStripLabel toolFechar;
+        private System.Windows.Forms.ToolStripLabel toolExec;
     }
 }

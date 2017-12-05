@@ -17,7 +17,6 @@ namespace Front.App.CaseGerenciamentoTeste.View
     public partial class frmProjeto : Form
     {
         Projeto _proj = new Projeto();
-        StatusType _status = new StatusType();  
         InteractionAPI _api = new InteractionAPI();
         Limpar _limpar = new Limpar();
         SistemasxProjetos _sxp = new SistemasxProjetos();
@@ -106,12 +105,14 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 {
                     var response = _api.Post("api/projeto/create", _proj);
                     _proj = JsonConvert.DeserializeObject<Projeto>(response);
+                    MessageBox.Show("Salvo!");
                 }
                 //se nao for nulo, altera
                 else
                 {
                     var response = _api.Post("api/projeto/update", _proj);
                     _proj = JsonConvert.DeserializeObject<Projeto>(response);
+                    MessageBox.Show("Salvo!");
                 }
                 salvaSistemasXProjeto();
                 _limpar.limpar(groupBox1);

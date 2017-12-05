@@ -32,6 +32,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
             InitializeComponent();
         }
 
+        public frmModelagemCaso()
+        {
+        }
+
         private void frmModelagemCaso_Load(object sender, EventArgs e)
         {
             txtCodCen.Text = _cen.cod_cen.ToString();
@@ -99,6 +103,13 @@ namespace Front.App.CaseGerenciamentoTeste.View
         public void carregaCampos()
         {
             txtCodCaso.Text = _caso.cod_caso.ToString();
+            txtCodCen.Text = _caso.cod_cen_caso.ToString();
+            txtNomeCaso.Text = _caso.nome_caso;
+            txtMassaDado.Text = _caso.massadados_caso;
+            txtPreCond.Text = _caso.precond_caso;
+            txtResultEsp.Text = _caso.resultesp_caso;
+            string status = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/statustypeforcod/" + _cen.cod_status_cen)).statustype;
+            cboStatus.SelectedIndex = cboStatus.FindStringExact(status);
         }
 
         private void btnConcluiCen_Click(object sender, EventArgs e)
@@ -141,6 +152,29 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 {
                     MessageBox.Show("Salvo!");
                     txtCodCen.Text = _caso.cod_cen_caso.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            frmSelectCaso frmselectcaso = new frmSelectCaso(this);
+            frmselectcaso.ShowDialog();
+        }
+
+        public void carregaConsulta(int codCaso)
+        {
+            try
+            {
+                if (codCaso != 0)
+                {
+                    _limpar.limpar(gbcaso);
+                    _caso = JsonConvert.DeserializeObject<Caso>(api.Get("api/caso/select/all/" + codCaso.ToString()));
+                    carregaCampos();
                 }
             }
             catch (Exception ex)

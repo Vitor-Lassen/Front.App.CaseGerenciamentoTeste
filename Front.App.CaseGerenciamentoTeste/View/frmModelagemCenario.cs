@@ -95,8 +95,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
             txtCodCen.Text = _cen.cod_cen.ToString();
             txtDesc.Text = _cen.descri_cen;
             txtNomeCen.Text = _cen.nome_cen;
-            _proj.nome_proj = JsonConvert.DeserializeObject<dynamic>(api.Get("api/projeto/select/listall"));
-            cboProj.SelectedIndex = cboProj.FindStringExact(_proj.ToString());
+            
             string status = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/statustypeforcod/" + _cen.cod_status_cen)).statustype;
             cboStatus.SelectedIndex = cboStatus.FindStringExact(status);
         }
@@ -129,7 +128,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                 if (codCen != 0)
                 {
                     _limpar.limpar(gbcenario);
-                    _cen = JsonConvert.DeserializeObject<Cenario>(api.Get("api/projeto/select/all/" + codCen.ToString()));
+                    _cen = JsonConvert.DeserializeObject<Cenario>(api.Get("api/cenario/select/all/" + codCen.ToString()));
                     carregaCampos();
                 }
             }

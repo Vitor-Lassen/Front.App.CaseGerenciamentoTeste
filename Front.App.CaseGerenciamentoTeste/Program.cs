@@ -1,4 +1,5 @@
-﻿using Front.App.CaseGerenciamentoTeste.View;
+﻿using Back.DB.CaseGerenciamentoTeste.Models;
+using Front.App.CaseGerenciamentoTeste.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;

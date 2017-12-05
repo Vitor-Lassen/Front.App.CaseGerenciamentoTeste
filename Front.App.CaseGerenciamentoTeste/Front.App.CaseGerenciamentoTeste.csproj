@@ -68,6 +68,12 @@
     <Compile Include="View\frmModelagemCaso.Designer.cs">
       <DependentUpon>frmModelagemCaso.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmSelectCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSelectCaso.Designer.cs">
+      <DependentUpon>frmSelectCaso.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmSelectCenario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmModelagemCaso.resx">
       <DependentUpon>frmModelagemCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSelectCaso.resx">
+      <DependentUpon>frmSelectCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmSelectCenario.resx">
       <DependentUpon>frmSelectCenario.cs</DependentUpon>

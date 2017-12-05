@@ -56,8 +56,14 @@ namespace Front.App.CaseGerenciamentoTeste.View
         }
 
         private void toolFechar_Click(object sender, EventArgs e)
-        {
+        { 
             Close();
+        }
+
+        private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
         }
     }
 }

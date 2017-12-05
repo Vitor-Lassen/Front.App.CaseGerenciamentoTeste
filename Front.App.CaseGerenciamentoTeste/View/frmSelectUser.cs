@@ -24,13 +24,17 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            try { 
-                InteractionAPI api = new InteractionAPI();
-                dgvUsers.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/user/select/forname/" + txtNome.Text));
-                }
-            catch (Exception ex)
+            if (!String.IsNullOrEmpty(txtNome.Text))
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    InteractionAPI api = new InteractionAPI();
+                    dgvUsers.DataSource = JsonConvert.DeserializeObject<dynamic>(api.Get("api/user/select/forname/" + txtNome.Text));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

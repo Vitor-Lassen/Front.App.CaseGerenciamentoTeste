@@ -20,24 +20,20 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void frmSplash_Load(object sender, EventArgs e)
         {
-            
+            frmLogin loginfrm = new frmLogin();
+            loginfrm.Show();
+            Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Opacity < 1)
-            {
-                Opacity += 0.05;
-
-            }
-            else
-            {
+            Visible = false;
+            
+            
                 timer1.Stop();
 
-                frmLogin loginfrm = new frmLogin();
-                loginfrm.Show();
-                Visible = false;
-            }
+                
+            
         }
     }
 }

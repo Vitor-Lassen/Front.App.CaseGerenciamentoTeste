@@ -28,6 +28,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
             this._cen = _cen;
             this._auth = _auth;
+            this.frm = frm;
             InitializeComponent();
         }
 

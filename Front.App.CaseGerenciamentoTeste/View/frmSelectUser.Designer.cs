@@ -93,8 +93,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnConsultar);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(634, 328);
+            this.MinimumSize = new System.Drawing.Size(634, 328);
             this.Name = "frmSelectUser";
-            this.Text = "frmSelectUser";
+            this.Text = "Selecionar Usuário";
             this.Load += new System.EventHandler(this.frmSelectUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);

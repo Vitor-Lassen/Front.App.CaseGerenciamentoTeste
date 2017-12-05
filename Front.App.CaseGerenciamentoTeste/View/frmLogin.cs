@@ -61,5 +61,10 @@ namespace Front.App.CaseGerenciamentoTeste.View
         {
 
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

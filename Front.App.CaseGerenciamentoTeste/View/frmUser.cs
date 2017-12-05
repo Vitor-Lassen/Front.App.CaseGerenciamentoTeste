@@ -25,12 +25,24 @@ namespace Front.App.CaseGerenciamentoTeste.View
         
         public frmUser()
         {
+           
             InitializeComponent();
+           
         }
 
         private void txtCod_TextChanged(object sender, EventArgs e)
         {
-            
+            if (String.IsNullOrEmpty(txtCod.Text))
+            {
+                txtSenha.ReadOnly = true;
+                chekTrocaSenha.Checked = true;
+                chekTrocaSenha.Enabled = false;
+            }
+            else
+            {
+                txtSenha.ReadOnly = false;
+                chekTrocaSenha.Enabled = true;
+            }
         }
         private void carregaCampos()
         {
@@ -45,39 +57,46 @@ namespace Front.App.CaseGerenciamentoTeste.View
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            try
+            if ((!String.IsNullOrEmpty(txtNome.Text)) && (!String.IsNullOrEmpty(txtSobrenome.Text)) && (cboAcesso.SelectedIndex != -1))
             {
-                _user.nome_usu = txtNome.Text;
-                _user.sobrenome_usu = txtSobrenome.Text;
-                _user.email_usu = txtEmail.Text;
-                _user.permissao_usu = cboAcesso.SelectedIndex;
-                _user.senha_usu = txtSenha.Text;
-                _user.troca_senha = chekTrocaSenha.Checked;
-                //se for nulo, cria
-                if (String.IsNullOrEmpty(txtCod.Text))
+                try
                 {
-                    InteractionAPI api = new InteractionAPI();
-                    var response = api.Post("api/user/create", _user);
-                    _user = JsonConvert.DeserializeObject<User>(response);
-                    carregaCampos();
-                    MessageBox.Show("Salvo!");
+                    _user.nome_usu = txtNome.Text;
+                    _user.sobrenome_usu = txtSobrenome.Text;
+                    _user.email_usu = txtEmail.Text;
+                    _user.permissao_usu = cboAcesso.SelectedIndex;
+                    _user.senha_usu = txtSenha.Text;
+                    _user.troca_senha = chekTrocaSenha.Checked;
+                    //se for nulo, cria
+                    if (String.IsNullOrEmpty(txtCod.Text))
+                    {
+                        InteractionAPI api = new InteractionAPI();
+                        var response = api.Post("api/user/create", _user);
+                        _user = JsonConvert.DeserializeObject<User>(response);
+                        carregaCampos();
+                        MessageBox.Show("Salvo!");
+                    }
+                    //se nao for nulo, altera
+                    else
+                    {
+                        _user.cod_usu = Convert.ToInt32(txtCod.Text);
+                        InteractionAPI api = new InteractionAPI();
+                        var response = api.Post("api/user/update", _user);
+                        _user = JsonConvert.DeserializeObject<User>(response);
+                        carregaCampos();
+                        MessageBox.Show("Salvo!");
+
+                    }
+                    _limpar.limpar(groupBox1);
                 }
-                //se nao for nulo, altera
-                else
+                catch (Exception ex)
                 {
-                    _user.cod_usu = Convert.ToInt32(txtCod.Text);
-                    InteractionAPI api = new InteractionAPI();
-                    var response = api.Post("api/user/update", _user);
-                    _user = JsonConvert.DeserializeObject<User>(response);
-                    carregaCampos();
-                    MessageBox.Show("Salvo!");
-                    
+                    MessageBox.Show(ex.Message);
                 }
-                _limpar.limpar(groupBox1);
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Preencha os campos:\nNome, Sobrenome e Acesso \nPara Cadastrar.");
             }
         }
 
@@ -106,7 +125,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-
+            txtCod_TextChanged(sender, e);
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)

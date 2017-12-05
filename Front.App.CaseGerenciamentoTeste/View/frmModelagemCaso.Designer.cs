@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbcaso = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtCodCen = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboStatus = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.gbcaso.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,23 @@
             this.gbcaso.TabIndex = 6;
             this.gbcaso.TabStop = false;
             this.gbcaso.Text = "Definição de Casos:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(458, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Status:";
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(504, 27);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(230, 21);
+            this.cboStatus.TabIndex = 18;
             // 
             // btnCancelar
             // 
@@ -151,6 +168,7 @@
             this.btnConcluiCen.TabIndex = 6;
             this.btnConcluiCen.Text = "Concluir";
             this.btnConcluiCen.UseVisualStyleBackColor = true;
+            this.btnConcluiCen.Click += new System.EventHandler(this.btnConcluiCen_Click);
             // 
             // btnAdicionaCaso
             // 
@@ -232,23 +250,6 @@
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Nome do Caso:";
-            // 
-            // cboStatus
-            // 
-            this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(504, 27);
-            this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(230, 21);
-            this.cboStatus.TabIndex = 18;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(458, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Status:";
             // 
             // frmModelagemCaso
             // 

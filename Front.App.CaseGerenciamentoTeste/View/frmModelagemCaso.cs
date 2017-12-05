@@ -22,7 +22,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
         Caso _caso = new Caso();
         Auth _auth = new Auth();
         Cenario _cen = new Cenario();
-        frmModelagemCenario frm = new frmModelagemCenario();
+        frmModelagemCenario frm = null;
         
         public frmModelagemCaso(Cenario _cen, Auth _auth, frmModelagemCenario frm)
         {
@@ -87,6 +87,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     MessageBox.Show("Salvo!");
                 }
                 _limpar.limpar(gbcaso);
+                txtCodCen.Text = _caso.cod_cen_caso.ToString();
             }
             catch (Exception ex)
             {
@@ -97,6 +98,54 @@ namespace Front.App.CaseGerenciamentoTeste.View
         public void carregaCampos()
         {
             txtCodCaso.Text = _caso.cod_caso.ToString();
+        }
+
+        private void btnConcluiCen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _caso.nome_caso = txtNomeCaso.Text;
+                _caso.precond_caso = txtPreCond.Text;
+                _caso.massadados_caso = txtMassaDado.Text;
+                _caso.resultesp_caso = txtResultEsp.Text;
+                _caso.cod_usu_caso = _auth.cod_usu;
+                //_caso.resultesp_caso = " ";
+                _caso.cod_cen_caso = Convert.ToInt32(txtCodCen.Text);
+                _caso.cod_status_caso = Convert.ToInt32(cboStatus.SelectedValue);
+                //se for nulo, cria
+                if (String.IsNullOrEmpty(txtCodCaso.Text))
+                {
+                    InteractionAPI api = new InteractionAPI();
+                    carregaCampos();
+                    var response = api.Post("api/caso/create", _caso);
+                    _caso = JsonConvert.DeserializeObject<Caso>(response);
+                    //MessageBox.Show("Salvo!");
+                }
+                //se nao for nulo, altera
+                else
+                {
+                    _caso.cod_caso = Convert.ToInt32(txtCodCaso.Text);
+                    InteractionAPI api = new InteractionAPI();
+                    var response = api.Post("api/caso/update", _caso);
+                    _caso = JsonConvert.DeserializeObject<Caso>(response);
+                    //MessageBox.Show("Salvo!");
+                }
+                _limpar.limpar(gbcaso);
+                if (MessageBox.Show("Tem Certeza que deseja Concluir a inserção de Casos neste Cenário de Teste?", "Informação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    MessageBox.Show("Salvo!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Salvo!");
+                    txtCodCen.Text = _caso.cod_cen_caso.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
     }

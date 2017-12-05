@@ -21,11 +21,15 @@ namespace Front.App.CaseGerenciamentoTeste.View
         Cenario _cen = new Cenario();
         Limpar _limpar = new Limpar();
         Auth _auth = new Auth();
-        
+        Projeto _proj = new Projeto();
         public frmModelagemCenario(Auth _auth)
         {
             this._auth = _auth;
             InitializeComponent();
+        }
+
+        public frmModelagemCenario()
+        {
         }
 
         private void frmModelagemCenario_Load(object sender, EventArgs e)
@@ -76,7 +80,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
                     MessageBox.Show("Salvo!");
                 }
                 _limpar.limpar(gbcenario);
-                var frmmodelcaso = new frmModelagemCaso(this, _auth, _cen);
+                var frmmodelcaso = new frmModelagemCaso(_cen, _auth, this);
                 frmmodelcaso.ShowDialog();
             }
             catch (Exception ex)
@@ -89,6 +93,12 @@ namespace Front.App.CaseGerenciamentoTeste.View
         public void carregaCampos()
         {
             txtCodCen.Text = _cen.cod_cen.ToString();
+            txtDesc.Text = _cen.descri_cen;
+            txtNomeCen.Text = _cen.nome_cen;
+            _proj.nome_proj = JsonConvert.DeserializeObject<dynamic>(api.Get("api/projeto/select/listall"));
+            cboProj.SelectedIndex = cboProj.FindStringExact(_proj.ToString());
+            string status = JsonConvert.DeserializeObject<dynamic>(api.Get("api/statustype/select/statustypeforcod/" + _cen.cod_status_cen)).statustype;
+            cboStatus.SelectedIndex = cboStatus.FindStringExact(status);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -98,7 +108,7 @@ namespace Front.App.CaseGerenciamentoTeste.View
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            frmSelectCenario frmselectcen = new frmSelectCenario();
+            frmSelectCenario frmselectcen = new frmSelectCenario(this);
             frmselectcen.ShowDialog();
         }
 
@@ -110,6 +120,23 @@ namespace Front.App.CaseGerenciamentoTeste.View
         private void btnCancelaCen_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void carregaConsulta(int codCen)
+        {
+            try
+            {
+                if (codCen != 0)
+                {
+                    _limpar.limpar(gbcenario);
+                    _cen = JsonConvert.DeserializeObject<Cenario>(api.Get("api/projeto/select/all/" + codCen.ToString()));
+                    carregaCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
